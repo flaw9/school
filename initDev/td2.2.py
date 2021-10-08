@@ -2,6 +2,7 @@ from math import sqrt
 
 def resolve(a, b, c):
     s = []
+    ns = 0
     if a == 0:
         if b == 0:
             if c == 0:
@@ -17,7 +18,7 @@ def resolve(a, b, c):
             ns = 2
         else:
             s.append( (-b) / (2 * a) )
-    return (ns if ns!=None else 0), s
+    return ns, s
 
 def main():
     """Récupération de toutes les variables, appel de la fonction de résolution et affichage du résultat."""

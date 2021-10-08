@@ -10,7 +10,7 @@ def methode_1():
             a = int(x)
             for i in range(1, 101):
                 a = 0.5 * (a + x/a)
-            print(f"La racine carrée de {x} est {a}.")
+    print(f"La racine carrée de {x} est {a}.")
 
 def methode_2():
     '''J'ai pas réellement compris l'intérêt ni le fonctionnement de cette fonction mais bon...'''
@@ -47,8 +47,8 @@ def methode_3():
 
 def main():
     # methode_1()
-    # methode_2() # je ne sais pas ce que c'est que cette fonction ...
-    # methode_3()
+    # methode_2() 
+    methode_3()
     return
 
 if __name__ == "__main__":
