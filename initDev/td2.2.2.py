@@ -5,7 +5,7 @@ def fdsc(t):
 def main():
     t = -5
     minimum = fdsc(t)
-    maximum = minimum
+    maximum = int(minimum)
     while t < 5:
         t += 0.25
         f = fdsc(t)

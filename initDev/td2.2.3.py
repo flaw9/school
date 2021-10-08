@@ -11,10 +11,10 @@ def methode_1():
             print(f"La racine carrée de {x} est {a}.")
 
 def methode_2():
-    pass
+    x = int(input())
 
 def main():
-    methode_1()
+    # methode_1()
     methode_2()
 
 if __name__ == "__main__":
