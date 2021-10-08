@@ -48,7 +48,7 @@ def methode_3():
 def main():
     # methode_1()
     # methode_2() # je ne sais pas ce que c'est que cette fonction ...
-    methode_3()
+    # methode_3()
 
 if __name__ == "__main__":
     main()
