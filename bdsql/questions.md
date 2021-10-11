@@ -115,3 +115,68 @@ SELECT nom, (salaire + comission) FROM employe WHERE comission NOT NULL
 UNION
 SELECT nom, salaire FROM employe WHERE comission IS NULL;
 ```
+
+## 19.
+
+```sql
+SELECT salaire FROM employe WHERE nom = "Jones";
+```
+
+## 20.
+
+```sql
+SELECT AVG(salaire) FROM employe WHERE poste = "Vendeur";
+```
+
+## 21.
+
+```sql
+SELECT nom FROM employe WHERE salaire > (SELECT salaire FROM employe WHERE nom = "Jones");
+```
+
+## 22
+
+### 1.
+
+```sql
+SELECT nom FROM employe WHERE poste = (SELECT poste FROM employe WHERE nom = "Jones");
+```
+
+### 2.
+#### 1.
+```sql
+SELECT nom FROM employe AS e JOIN employe AS j ON e.poste = j.poste WHERE j.nom = "Jones";
+```
+#### 2.
+```sql
+SELECT nom FROM employe AS e, employe AS j WHERE e.poste = j.poste AND j.nom = "Jones";
+```
+
+## 23
+
+### 1.
+
+```sql
+SELECT e.nom FROM employe WHERE chef = (SELECT chef FROM employe WHERE e.nom = "Jones");
+```
+
+### 2.
+#### 1.
+```sql
+SELECT e.nom FROM employe AS e JOIN employe AS j ON e.chef = j.chef WHERE j.nom = "Jones";
+```
+#### 2.
+```sql
+SELECT e.nom FROM employe AS e, employe AS j WHERE e.chef = j.chef AND j.nom = "Jones";
+```
+
+## 24
+
+### 1.
+```sql
+SELECT e.nom FROM employe AS e, employe AS m WHERE e.poste = m.poste AND e.chef = m.chef AND m.nom = "Martin";
+```
+### 2.
+```sql
+SELECT e.nom FROM employe AS e JOIN employe AS m ON e.poste = m.poste AND e.chef = m.chef WHERE m.nom = "Martin";
+```
