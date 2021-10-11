@@ -63,3 +63,21 @@ SELECT DISTINCT poste FROM employe;
 ```sql
 SELECT e.nom, c.nom FROM employe AS e JOIN employe AS c ON e.chef = c.matricule;
 ```
+
+## 12.
+
+```sql
+SELECT e.nom, c.nom FROM employe AS e JOIN employe AS c ON e.chef = c.matricule OR e.chef = NULL;
+```
+
+## 13.
+
+```sql
+SELECT nom, poste, localisation FROM employe, departement WHERE numdep = dnum;
+```
+
+## 14.
+
+```sql
+SELECT dnom, COUNT(*) FROM departement, employe WHERE dnum = numdep;
+```
