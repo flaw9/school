@@ -1,3 +1,5 @@
+# 1.
+
 ## 1.
 
 ```sql
@@ -58,9 +60,9 @@ SELECT nom, salaire, poste FROM employe WHERE numdep = (SELECT numdep FROM emplo
 SELECT DISTINCT poste FROM employe;
 ```
 
-# !!!
+## !!!
 À partir de la question 11, les réponses données renvoient, pour certaines, des **ERREURS** ou un **résultat non attendu / non complet** lors des essais effectués sur la base. Elles sont marquées d'une étoile.
-# !!!
+## !!!
 
 ## 11.
 
@@ -103,17 +105,17 @@ SELECT g.poste, AVG(e.salaire) FROM employe AS g JOIN employe AS e ON g.poste = 
 ## 17.
 
 ```sql
-SELECT nom, (salaire + comission) FROM employe WHERE comission NOT NULL AND poste = "Vendeur"
+SELECT nom, (salaire + commission) FROM employe WHERE commission NOT NULL AND poste = "Vendeur"
 UNION
-SELECT nom, salaire FROM employe WHERE comission IS NULL AND poste = "Vendeur";
+SELECT nom, salaire FROM employe WHERE commission IS NULL AND poste = "Vendeur";
 ```
 
 ## 18.
 
 ```sql
-SELECT nom, (salaire + comission) FROM employe WHERE comission NOT NULL
+SELECT nom, (salaire + commission) FROM employe WHERE commission NOT NULL
 UNION
-SELECT nom, salaire FROM employe WHERE comission IS NULL;
+SELECT nom, salaire FROM employe WHERE commission IS NULL;
 ```
 
 ## 19.
@@ -217,4 +219,33 @@ SELECT SUM(salaire) FROM employe WHERE numdep = 10;
 
 ```sql
 SELECT e.nom FROM employe AS e JOIN employe AS c WHERE e.numdep != c.numdep AND e.chef = c.matricule;
+```
+
+# 2.
+
+## 1.
+
+```sql
+CREATE TABLE "departement" (
+	"dnum" INTEGER NOT NULL UNIQUE,
+	"dnom" TEXT NOT NULL,
+	"localisation" TEXT NOT NULL,
+	PRIMARY KEY("dnum")
+);
+```
+
+## 2.
+
+```sql
+CREATE TABLE IF NOT EXISTS "employe" (
+	"matricule"	INTEGER NOT NULL UNIQUE,
+	"nom" TEXT NOT NULL,
+	"poste"	TEXT NOT NULL,
+	"chef" INTEGER,
+	"dateembauche" TEXT NOT NULL,
+	"salaire" INTEGER NOT NULL,
+	"commission" INTEGER,
+	"numdep" INTEGER NOT NULL,
+	PRIMARY KEY("matricule")
+);
 ```
