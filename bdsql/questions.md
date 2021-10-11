@@ -1,3 +1,15 @@
+## 1.
+
+```sql
+SELECT nom, salaire, poste FROM employe;
+```
+
+## 2.
+
+```sql
+SELECT dnom, localisation FROM departement;
+```
+
 ## 3.
 
 ```sql
@@ -44,4 +56,16 @@ SELECT nom, salaire, poste FROM employe WHERE numdep = (SELECT numdep FROM emplo
 
 ```sql
 SELECT DISTINCT poste FROM employe;
+```
+
+## 11.
+
+```sql
+SELECT e.nom, c.nom FROM employe AS e JOIN employe AS c ON e.chef = c.matricule;
+```
+
+## 12.
+
+```sql
+SELECT e.nom, c.nom FROM employe AS e JOIN employe AS c ON e.chef = c.matricule OR e.chef = NULL;
 ```
