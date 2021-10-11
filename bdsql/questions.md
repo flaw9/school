@@ -180,3 +180,41 @@ SELECT e.nom FROM employe AS e, employe AS m WHERE e.poste = m.poste AND e.chef 
 ```sql
 SELECT e.nom FROM employe AS e JOIN employe AS m ON e.poste = m.poste AND e.chef = m.chef WHERE m.nom = "Martin";
 ```
+### 3.
+```sql
+```
+
+## 25.
+
+```sql
+SELECT nom, MAX(salaire), poste FROM employe;
+```
+
+## 26.
+
+```sql
+```
+
+## 27.
+
+```sql
+SELECT COUNT(DISTINCT poste) FROM employe;
+```
+
+## 28.
+
+```sql
+SELECT COUNT(matricule) FROM employe WHERE numdep = 10;
+```
+
+## 29.
+
+```sql
+SELECT SUM(salaire) FROM employe WHERE numdep = 10;
+```
+
+## 30.
+
+```sql
+SELECT e.nom FROM employe AS e JOIN employe AS c WHERE e.numdep != c.numdep AND e.chef = c.matricule;
+```
