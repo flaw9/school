@@ -59,7 +59,7 @@ SELECT DISTINCT poste FROM employe;
 ```
 
 # !!!
-À partir de la question 11, les réponses données renvoient, pour certaines, des **ERREURS** ou un **résultat non attendu / nom complet** lors des essais effectués sur la base. Elles sont marquées d'une étoile.
+À partir de la question 11, les réponses données renvoient, pour certaines, des **ERREURS** ou un **résultat non attendu / non complet** lors des essais effectués sur la base. Elles sont marquées d'une étoile.
 # !!!
 
 ## 11.
