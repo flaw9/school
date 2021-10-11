@@ -139,17 +139,17 @@ SELECT nom FROM employe WHERE salaire > (SELECT salaire FROM employe WHERE nom =
 ### 1.
 
 ```sql
-SELECT nom FROM employe WHERE poste = (SELECT poste FROM employe WHERE nom = "Jones");
+SELECT nom FROM employe WHERE poste = (SELECT poste FROM employe WHERE nom = "Jones") AND nom != "Jones";
 ```
 
 ### 2.
 #### 1.
 ```sql
-SELECT nom FROM employe AS e JOIN employe AS j ON e.poste = j.poste WHERE j.nom = "Jones";
+SELECT nom FROM employe AS e JOIN employe AS j ON e.poste = j.poste WHERE j.nom = "Jones" AND e.nom != "Jones";
 ```
 #### 2.
 ```sql
-SELECT nom FROM employe AS e, employe AS j WHERE e.poste = j.poste AND j.nom = "Jones";
+SELECT nom FROM employe AS e, employe AS j WHERE e.poste = j.poste AND j.nom = "Jones" AND e.nom != "Jones";
 ```
 
 ## 23
