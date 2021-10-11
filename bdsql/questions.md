@@ -274,3 +274,11 @@ INSERT INTO departement VALUES (10, "Compatbilité", "Paris");
 INSERT INTO departement VALUES (20, "Recherche", "Paris");
 INSERT INTO departement VALUES (30, "Vente", "Saint-Dié");
 ```
+
+# 3.
+
+## 1.
+
+```sql
+UPDATE employe SET salaire = salaire * 1.10 WHERE commission > 0.5 * salaire;
+```
