@@ -262,7 +262,7 @@ INSERT INTO employe VALUES (7566, "Jones", "Chef Service", 7839, "02/04/1991", 2
 INSERT INTO employe VALUES (7654, "Martin", "Vendeur", 7698, "18/09/2008", 1200, 1000, 30);
 INSERT INTO employe VALUES (7698, "Blake", "Chef Service", 7839, "01/05/2002", 2800, NULL, 30);
 INSERT INTO employe VALUES (7788, "Scott", "Analyste", 7566, "09/12/1990", 3000, NULL, 20);
-INSERT INTO employe VALUES (7839, "King", "PDG", NULL, "17/11/2003", 5000, , 10);
+INSERT INTO employe VALUES (7839, "King", "PDG", NULL, "17/11/2003", 5000, NULL, 10);
 INSERT INTO employe VALUES (7876, "Adams", "Secrétaire", 7788, "12/01/2012", 1100, NULL, 20);
 INSERT INTO employe VALUES (7934, "Miller", "Secrétaire", 7839, "23/01/1998", 1300, NULL, 10);
 ```
