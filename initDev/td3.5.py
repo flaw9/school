@@ -15,8 +15,8 @@ def main():
     for i in range(noc):
         t.pop()
 
-        print(f"{noc} occurences de {nb} ont été trouvées dans t.")
-        print(t)
+    print(f"{noc} occurences de {nb} ont été trouvées dans t.")
+    print(t)
 
 if __name__ == "__main__":
     main()
