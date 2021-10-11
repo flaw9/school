@@ -103,6 +103,14 @@ SELECT g.poste, AVG(e.salaire) FROM employe AS g JOIN employe AS e ON g.poste = 
 ## 17.
 
 ```sql
+SELECT nom, (salaire + comission) FROM employe WHERE comission NOT NULL AND poste = "Vendeur"
+UNION
+SELECT nom, salaire FROM employe WHERE comission IS NULL AND poste = "Vendeur";
+```
+
+## 18.
+
+```sql
 SELECT nom, (salaire + comission) FROM employe WHERE comission NOT NULL
 UNION
 SELECT nom, salaire FROM employe WHERE comission IS NULL;
