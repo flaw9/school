@@ -176,11 +176,11 @@ SELECT e.nom FROM employe AS e, employe AS j WHERE e.chef = j.chef AND j.nom = "
 
 ### 1.
 ```sql
-SELECT e.nom FROM employe AS e, employe AS m WHERE e.poste = m.poste AND e.chef = m.chef AND m.nom = "Martin";
+SELECT e.nom FROM employe AS e, employe AS m WHERE e.poste = m.poste AND e.chef = m.chef AND m.nom = "Martin" AND e.nom != "Martin";
 ```
 ### 2.
 ```sql
-SELECT e.nom FROM employe AS e JOIN employe AS m ON e.poste = m.poste AND e.chef = m.chef WHERE m.nom = "Martin";
+SELECT e.nom FROM employe AS e JOIN employe AS m ON e.poste = m.poste AND e.chef = m.chef WHERE m.nom = "Martin" AND e.nom != "Martin";
 ```
 ### 3.
 ```sql
