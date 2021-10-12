@@ -6,6 +6,8 @@ This is were I'll share all the courses, lessons and works I'm having, so my cla
 
 In [initDev](/initDev) you can find all the files related to the R1.01.
 
+In [initDev/algo papier de merde](/initDev/algo-papier) you can find all the files related to the R1.01 made in TD.
+
 In [BD / SQL](/bdsql) you can find all the files related to the sql course.
 
 > There are some programs in [trash](/initDev/trash) that work, but aren't especially well written, so you can use them but they aren't as good as they probably could or should be.
