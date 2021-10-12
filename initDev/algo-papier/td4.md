@@ -72,7 +72,7 @@ Fin
 
 ```
 Début
-    compteur = [0,0,0,0,0,0,0,0,0,0]
+    compteur = [0,0,0,0,0,0,0,0,0,0] # [0 * 10]
     i <- 1
     tant que i < taille faire
         compteur[t[i]] <- compteur[t[i]] + 1
@@ -84,7 +84,7 @@ Début
         tant que nb < compteur[i] faire
             AJouter(t, i)
         Fin Tant que
-    Fin Tant que 
+    Fin Tant que
 Fin
 ```
 
