@@ -94,10 +94,25 @@ Fin
 
 ```
 Début
-    digits <- (Tableau de 10 tableaux)
     i <- 1
-    Tant que i < taille faire
-          
+    limite <- long(chaine(max(t)))
+    Tant que i < limite faire
+        digits <- (Tableau de 10 tableaux)
+        idc <- 1
+        Tant que idc < taille faire
+            digits[t[idc][i]] = digits[t[idc]]
+            idc <- idc + 1
+        Fin Tant que
+        di <- 1
+        t = []
+        Tant que di < 10 faire
+            tst <- len(digits[di])
+            j <- 1
+            Tant que j < tst faire
+                Ajouter(t, digits[di][j])
+            Fin Tant que
+        Fin Tant que
+        i <- i + 1
     Fin Tant que
 Fin
 ```
