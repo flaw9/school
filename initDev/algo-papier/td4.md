@@ -90,6 +90,9 @@ Fin
 
 ## Tri Radix
 
+> Je jure que ça pue la merde l'algo papier, genre vraiment c'est éclaté ...
+> J'vous ferai un truc propre (ou pas) en python mais ce sera un peu plus opti que sa grosse merde ...
+
 ### Algo:
 
 ```
