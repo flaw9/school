@@ -10,6 +10,8 @@ In [initDev/algo papier de merde](/initDev/algo-papier) you can find all the fil
 
 In [BD / SQL](/bdsql) you can find all the files related to the sql course.
 
+In [Introduction aux SE](/introSE) you can find some of the scripts I wrote for the OS Introduction lesson.
+
 > There are some programs in [trash](/initDev/trash) that work, but aren't especially well written, so you can use them but they aren't as good as they probably could or should be.
 
 Also note that all the programs starting with **td2** or **td3** aren't selfmade, I'm just copying what the teacher sent us, so it is obviously full of errors and very unoptimized.
