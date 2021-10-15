@@ -1,5 +1,5 @@
 def main():
-    chaine = list(map(str, input("Chaine ade caractères à coder: ")))
+    chaine = list(map(str, input("Chaine de caractères à coder: ")))
     chaine2 = ""
     for i in chaine:
         if i != ' ' and i != 'Z' and i != 'z':
