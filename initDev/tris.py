@@ -58,7 +58,7 @@ def main():
     # print(tri_insertion(t))
     # print(tri_selection(t))
     # print(tri_compteur(t))
-    print(tri_radix(t))
+    # print(tri_radix(t))
 
 if __name__ == "__main__":
     main()
