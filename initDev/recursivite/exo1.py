@@ -1,7 +1,6 @@
 import timeit
 
 def LireDansIntervalle( imin: int, imax: int) -> int:
-    
     ret = int(input())
     while ret < imin or ret > imax:
         print(f"Le nombre doit être comprit entre {imin} et {imax}")
@@ -46,8 +45,8 @@ def reverse_iterative(s: str) -> str:
     return reverse
 
 def reverse_recursive1(s: str) -> str:
-    if len(s) <= 2:
-        return s
+    if len(s) == 2:
+        return s[-1] + s[0]
     else:
         return s[-1] + reverse_recursive1(s[1:-1]) + s[0]
 
@@ -73,11 +72,11 @@ def main():
     # print(fibo(int(input())))
     s = str(input())
     # print(reverse_iterative(s))
-    # print(reverse_recursive1(s))
-    # print(reverse_recursive2(s))
-    print(timeit.timeit(f"reverse_iterative('{s}')", number = 1000000, globals=globals())) #
-    print(timeit.timeit(f"reverse_recursive1('{s}')", number = 1000000, globals=globals())) #
-    print(timeit.timeit(f"reverse_recursive2('{s}')", number = 1000000, globals=globals())) #
+    print(reverse_recursive1(s))
+    print(reverse_recursive2(s))
+    # print(timeit.timeit(f"reverse_iterative('{s}')", number = 1000000, globals=globals())) #
+    # print(timeit.timeit(f"reverse_recursive1('{s}')", number = 1000000, globals=globals())) #
+    # print(timeit.timeit(f"reverse_recursive2('{s}')", number = 1000000, globals=globals())) #
 
 if __name__ == "__main__":
     main()
