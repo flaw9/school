@@ -1,3 +1,5 @@
+import timeit
+
 def LireDansIntervalle( imin: int, imax: int) -> int:
     
     ret = int(input())
@@ -37,20 +39,45 @@ def puissance_recursive(x: (float or int), n: int) -> (float or int):
         print(f"{x} puissance {n} retourne sa valeur {P}")
         return(P)
 
-def reverse(s: str) -> str:
+def reverse_iterative(s: str) -> str:
+    reverse = ""
+    for i in range(0, len(s)):
+        reverse = s[i]+reverse
+    return reverse
+
+def reverse_recursive1(s: str) -> str:
+    if len(s) <= 2:
+        return s
+    else:
+        return s[-1] + reverse_recursive1(s[1:-1]) + s[0]
+
+def reverse_recursive2(s: str) -> str:
     if len(s) == 1:
         return s
     else:
-        return f"{s[-1]}{reverse(s[0:-1])}"
+        return f"{s[-1]}{reverse_recursive2(s[0:-1])}"
 
 def fibo(n: int) -> int:
-    return n
+    if n == 1 or n == 2:
+        return 1
+    else:
+        return fibo(n-1)+fibo(n-2)
 
 def main():
+    # factorielle_iterative(int(input()))
     # factorielle_recursive(int(input()))
     # print(puissance_iterative(int(input()), 2))
     # print(puissance_recursive(int(input()), 2))
-    print(reverse(str(input())))
+    # print(reverse_iterative(str(input())))
+    # print(reverse_recursive(str(input())))
+    # print(fibo(int(input())))
+    s = str(input())
+    # print(reverse_iterative(s))
+    # print(reverse_recursive1(s))
+    # print(reverse_recursive2(s))
+    print(timeit.timeit(f"reverse_iterative('{s}')", number = 1000000, globals=globals())) #
+    print(timeit.timeit(f"reverse_recursive1('{s}')", number = 1000000, globals=globals())) #
+    print(timeit.timeit(f"reverse_recursive2('{s}')", number = 1000000, globals=globals())) #
 
 if __name__ == "__main__":
     main()
