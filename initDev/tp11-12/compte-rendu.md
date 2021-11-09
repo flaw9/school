@@ -137,7 +137,7 @@ def rechercheDichotomie(tab: list, x: int) -> int:
 
 ### c)
 
-Il y a relation entre la réponse *a* et la réponse *b*. Les valeurs de la colonne "dichotomie" correspondent à la valeur de log<sub>2</sub>(N).
+Il y a relation entre la réponse *a* et la réponse *b*. Les valeurs de la colonne *dichotomie* correspondent à la valeur de **log<sub>2</sub>(N)**.
 
 # Manipulation de fichier et formatage
 
@@ -159,4 +159,3 @@ if __name__ == "__main__":
 ```
 
 # Tri à bulle et Complexité
-
