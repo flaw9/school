@@ -113,7 +113,7 @@ SELECT enom, esal FROM employe WHERE ecomm AND eposte = "Vendeur" IS NULL;
 ## 18.
 
 ```sql
-SELECT enom, (esal + ecomm) FROM employe WHERE ecomm NOT NULL
+SELECT enom, (esal + ecomm) FROM employe WHERE ecomm IS NOT NULL
 UNION
 SELECT enom, esal FROM employe WHERE ecomm IS NULL;
 ```
@@ -295,4 +295,10 @@ INSERT INTO `departement` (`dnum`, `dnom`, `DLoc`) VALUES ('10', 'Comptabilité'
 
 ```sql
 UPDATE employe SET esal = esal * 1.10 WHERE ecomm > 0.5 * esal;
+```
+
+## 2.
+
+```sql
+UPDATE employe SET ecomm = AVG(SELECT ecom FROM employe) WHERE edateemb < '1/01/2002' AND ecomm IS NULL);
 ```
