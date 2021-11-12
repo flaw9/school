@@ -300,4 +300,5 @@ UPDATE employe SET esal = esal * 1.10 WHERE ecomm > 0.5 * esal;
 ## 2.
 
 ```sql
+UPDATE employe SET ecomm = (SELECT AVG(ecomm) FROM employe) WHERE '2002-01-01' > edateemb AND ecomm IS NULL;
 ```
