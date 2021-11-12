@@ -21,7 +21,7 @@ SELECT enom, eposte, esal FROM employe WHERE eposte = "Vendeur";
 ## 4.
 
 ```sql
-SELECT matricule, enom, esal FROM employe WHERE esal > 1800;
+SELECT enum, enom, esal FROM employe WHERE esal > 1800;
 ```
 
 ## 5.
@@ -67,14 +67,14 @@ SELECT DISTINCT eposte FROM employe;
 ## 11.
 
 ```sql
-SELECT e.enom, c.enom FROM employe AS e JOIN employe AS c ON e.chef = c.matricule;
+SELECT e.enom, c.enom FROM employe AS e JOIN employe AS c ON e.chef = c.enum;
 ```
 
 ## 12. *
 > *Résultat non attendu*
 
 ```sql
-SELECT e.enom, c.enom FROM employe AS e JOIN employe AS c ON e.chef = c.matricule OR e.chef IS NULL;
+SELECT e.enom, c.enom FROM employe AS e JOIN employe AS c ON e.chef = c.enum OR e.chef IS NULL;
 ```
 
 ## 13.
@@ -207,7 +207,7 @@ SELECT COUNT(DISTINCT eposte) FROM employe;
 ## 28.
 
 ```sql
-SELECT COUNT(matricule) FROM employe WHERE enumdep = 10;
+SELECT COUNT(enum) FROM employe WHERE enumdep = 10;
 ```
 
 ## 29.
@@ -219,7 +219,7 @@ SELECT SUM(esal) FROM employe WHERE enumdep = 10;
 ## 30.
 
 ```sql
-SELECT e.enom FROM employe AS e JOIN employe AS c WHERE e.enumdep != c.enumdep AND e.chef = c.matricule;
+SELECT e.enom FROM employe AS e JOIN employe AS c WHERE e.enumdep != c.enumdep AND e.chef = c.enum;
 ```
 
 # 2.
@@ -239,7 +239,7 @@ CREATE TABLE "departement" (
 
 ```sql
 CREATE TABLE IF NOT EXISTS "employe" (
-	"matricule"	INTEGER NOT NULL UNIQUE,
+	"enum"	INTEGER NOT NULL UNIQUE,
 	"enom" TEXT NOT NULL,
 	"eposte"	TEXT NOT NULL,
 	"chef" INTEGER,
@@ -247,7 +247,7 @@ CREATE TABLE IF NOT EXISTS "employe" (
 	"esal" INTEGER NOT NULL,
 	"ecomm" INTEGER,
 	"enumdep" INTEGER NOT NULL,
-	PRIMARY KEY("matricule")
+	PRIMARY KEY("enum")
 );
 ```
 
