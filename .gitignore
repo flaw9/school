@@ -1,2 +1,5 @@
 ignore
 *.odt
+.odt*
+*.odt*
+.odt
