@@ -227,7 +227,7 @@ SELECT e.enom FROM employe AS e JOIN employe AS c WHERE e.enumdep != c.enumdep A
 ## 1.
 
 ```sql
-CREATE TABLE "departement" (
+CREATE TABLE IF NOT EXISTS "departement" (
 	"dnum" INTEGER NOT NULL UNIQUE,
 	"dnom" TEXT NOT NULL,
 	"DLoc" TEXT NOT NULL,
