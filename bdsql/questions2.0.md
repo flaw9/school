@@ -67,14 +67,14 @@ SELECT DISTINCT eposte FROM employe;
 ## 11.
 
 ```sql
-SELECT e.enom, c.enom FROM employe AS e JOIN employe AS c ON e.chef = c.enum;
+SELECT e.enom, c.enom FROM employe AS e JOIN employe AS c ON e.echef = c.enum;
 ```
 
 ## 12. *
 > *Résultat non attendu*
 
 ```sql
-SELECT e.enom, c.enom FROM employe AS e JOIN employe AS c ON e.chef = c.enum OR e.chef IS NULL;
+SELECT e.enom, c.enom FROM employe AS e JOIN employe AS c ON e.echef = c.enum OR e.echef IS NULL;
 ```
 
 ## 13.
@@ -159,28 +159,28 @@ SELECT enom FROM employe AS e, employe AS j WHERE e.eposte = j.eposte AND j.enom
 ### 1.
 
 ```sql
-SELECT enom FROM employe WHERE chef = (SELECT chef FROM employe WHERE enom = "Jones") AND enom != "Jones";
+SELECT enom FROM employe WHERE echef = (SELECT echef FROM employe WHERE enom = "Jones") AND enom != "Jones";
 ```
 
 ### 2.
 #### 1.
 ```sql
-SELECT e.enom FROM employe AS e JOIN employe AS j ON e.chef = j.chef WHERE j.enom = "Jones" AND e.enom != "Jones";
+SELECT e.enom FROM employe AS e JOIN employe AS j ON e.echef = j.echef WHERE j.enom = "Jones" AND e.enom != "Jones";
 ```
 #### 2.
 ```sql
-SELECT e.enom FROM employe AS e, employe AS j WHERE e.chef = j.chef AND j.enom = "Jones" AND e.enom != "Jones";
+SELECT e.enom FROM employe AS e, employe AS j WHERE e.echef = j.echef AND j.enom = "Jones" AND e.enom != "Jones";
 ```
 
 ## 24
 
 ### 1.
 ```sql
-SELECT e.enom FROM employe AS e, employe AS m WHERE e.eposte = m.eposte AND e.chef = m.chef AND m.enom = "Martin" AND e.enom != "Martin";
+SELECT e.enom FROM employe AS e, employe AS m WHERE e.eposte = m.eposte AND e.echef = m.echef AND m.enom = "Martin" AND e.enom != "Martin";
 ```
 ### 2.
 ```sql
-SELECT e.enom FROM employe AS e JOIN employe AS m ON e.eposte = m.eposte AND e.chef = m.chef WHERE m.enom = "Martin" AND e.enom != "Martin";
+SELECT e.enom FROM employe AS e JOIN employe AS m ON e.eposte = m.eposte AND e.echef = m.echef WHERE m.enom = "Martin" AND e.enom != "Martin";
 ```
 ### 3.
 ```sql
@@ -219,7 +219,7 @@ SELECT SUM(esal) FROM employe WHERE enumdep = 10;
 ## 30.
 
 ```sql
-SELECT e.enom FROM employe AS e JOIN employe AS c WHERE e.enumdep != c.enumdep AND e.chef = c.enum;
+SELECT e.enom FROM employe AS e JOIN employe AS c WHERE e.enumdep != c.enumdep AND e.echef = c.enum;
 ```
 
 # 2.
@@ -242,7 +242,7 @@ CREATE TABLE IF NOT EXISTS "employe" (
 	"enum"	INTEGER NOT NULL UNIQUE,
 	"enom" TEXT NOT NULL,
 	"eposte"	TEXT NOT NULL,
-	"chef" INTEGER,
+	"echef" INTEGER,
 	"edateemb" TEXT NOT NULL,
 	"esal" INTEGER NOT NULL,
 	"ecomm" INTEGER,
@@ -286,7 +286,7 @@ INSERT INTO departement VALUES (30, "Vente", "Saint-Dié");
 
 ```sql
 INSERT INTO `departement` (`dnum`, `dnom`, `DLoc`) VALUES ('10', 'Comptabilité', 'Paris'), ('20', 'Recherche', 'Paris'), ('30', 'Ventes', 'Saint-Dié');
-```
+```	
 
 # 3.
 
