@@ -45,7 +45,7 @@ SELECT COUNT(*) FROM employe WHERE esal > 2000;
 ## 8.
 
 ```sql
-SELECT SUM(salaires) FROM employe WHERE eposte = "Vendeur";
+SELECT SUM(esal) FROM employe WHERE eposte = "Vendeur";
 ```
 
 ## 9.
@@ -266,6 +266,9 @@ INSERT INTO employe VALUES (7839, "King", "PDG", NULL, "17/11/2003", 5000, NULL,
 INSERT INTO employe VALUES (7876, "Adams", "Secrétaire", 7788, "12/01/2012", 1100, NULL, 20);
 INSERT INTO employe VALUES (7934, "Miller", "Secrétaire", 7839, "23/01/1998", 1300, NULL, 10);
 ```
+
+>> Version TP
+
 
 > Table `departement`
 
