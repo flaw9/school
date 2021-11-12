@@ -147,11 +147,11 @@ SELECT enom FROM employe WHERE eposte = (SELECT eposte FROM employe WHERE enom =
 ### 2.
 #### 1.
 ```sql
-SELECT enom FROM employe AS e JOIN employe AS j ON e.eposte = j.eposte WHERE j.enom = "Jones" AND e.enom != "Jones";
+SELECT e.enom FROM employe AS e JOIN employe AS j ON e.eposte = j.eposte WHERE j.enom = "Jones" AND e.enom != "Jones";
 ```
 #### 2.
 ```sql
-SELECT enom FROM employe AS e, employe AS j WHERE e.eposte = j.eposte AND j.enom = "Jones" AND e.enom != "Jones";
+SELECT e.enom FROM employe AS e, employe AS j WHERE e.eposte = j.eposte AND j.enom = "Jones" AND e.enom != "Jones";
 ```
 
 ## 23
