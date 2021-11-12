@@ -105,9 +105,9 @@ SELECT g.eposte, AVG(e.esal) FROM employe AS g JOIN employe AS e ON g.eposte = e
 ## 17.
 
 ```sql
-SELECT enom, (esal + ecomm) FROM employe WHERE ecomm NOT NULL AND eposte = "Vendeur"
+SELECT enom, (esal + ecomm) FROM employe WHERE ecomm AND eposte = "Vendeur" IS NOT NULL
 UNION
-SELECT enom, esal FROM employe WHERE ecomm IS NULL AND eposte = "Vendeur";
+SELECT enom, esal FROM employe WHERE ecomm AND eposte = "Vendeur" IS NULL;
 ```
 
 ## 18.
@@ -196,6 +196,7 @@ SELECT enom, MAX(esal), eposte FROM employe;
 > La date n'étant pas enregistrée au bon format dans la base ...
 
 ```sql
+SELECT * FROM employe WHERE edateemb < ANY (SELECT edateemb FROM employe WHERE enumdep = 10);
 ```
 
 ## 27.
