@@ -282,6 +282,12 @@ INSERT INTO departement VALUES (20, "Recherche", "Paris");
 INSERT INTO departement VALUES (30, "Vente", "Saint-Dié");
 ```
 
+>> Version TP
+
+```sql
+INSERT INTO `departement` (`dnum`, `dnom`, `DLoc`) VALUES ('10', 'Comptabilité', 'Paris'), ('20', 'Recherche', 'Paris'), ('30', 'Ventes', 'Saint-Dié');
+```
+
 # 3.
 
 ## 1.
