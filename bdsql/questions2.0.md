@@ -243,7 +243,7 @@ CREATE TABLE IF NOT EXISTS "employe" (
 	"enom" TEXT NOT NULL,
 	"eposte"	TEXT NOT NULL,
 	"chef" INTEGER,
-	"dateembauche" TEXT NOT NULL,
+	"edateemb" TEXT NOT NULL,
 	"esal" INTEGER NOT NULL,
 	"ecomm" INTEGER,
 	"enumdep" INTEGER NOT NULL,
