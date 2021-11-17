@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    float tab[100]:
+    float tab[100];
     int i;
     for (i=0; i <100; i++) {
         tab[i] = (float) i/100;
