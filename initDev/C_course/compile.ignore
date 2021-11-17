@@ -1,0 +1,5 @@
+gcc -o executables/$1 $1.c
+
+git add ../..
+git commit -m "..."
+git push -fu origin master
