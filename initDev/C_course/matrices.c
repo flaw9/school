@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-saisiMat() {
+void saisiMat() {
     int lar, lon;
     printf("Saisir la largeur: ");
     scanf("%d", &lar);
