@@ -3,9 +3,9 @@
 void saisiMat() {
     int lar, lon;
     printf("Saisir la largeur: ");
-    scanf("%d", &lar)
+    scanf("%d", &lar);
     printf("Saisir la longueur: ");
-    scanf("%d", &lon)
+    scanf("%d", &lon);
     float tab1[lon][lar];
     float tab2[lon][lar];
     return tab1, tab2;
