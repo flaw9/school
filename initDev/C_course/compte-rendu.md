@@ -35,6 +35,8 @@ int main() {
 
 ```
 
+<hr>
+
 ```c
 #include <stdio.h>
 
@@ -86,6 +88,8 @@ int main() {
 
 ```
 
+<hr>
+
 ```c
 #include <stdio.h>
 
@@ -104,6 +108,8 @@ int main() {
 
 ```
 
+<hr>
+
 ```c
 #include <stdio.h>
 
@@ -119,6 +125,8 @@ int main() {
 }
 
 ```
+
+<hr>
 
 >> sommeProduit n°1
 
@@ -179,6 +187,8 @@ int main() {
 
 ```
 
+<hr>
+
 ```c
 #include <stdio.h>
 
@@ -192,6 +202,8 @@ int main() {
 }
 
 ```
+
+<hr>
 
 ```c
 #include <stdio.h>
@@ -209,6 +221,8 @@ int main() {
 }
 
 ```
+
+<hr>
 
 ```c
 #include <stdio.h>
@@ -247,6 +261,8 @@ int main() {
 }
 ```
 
+<hr>
+
 ```c
 #include <stdio.h>
 
@@ -264,6 +280,8 @@ int main() {
 }
 
 ```
+
+<hr>
 
 >> Avant modification
 
@@ -299,6 +317,8 @@ int main() {
 }
 ```
 
+<hr>
+
 ```c
 #include <stdio.h>
 
@@ -313,6 +333,8 @@ int main() {
 }
 ```
 
+<hr>
+
 ```c
 #include <stdio.h>
 
@@ -326,6 +348,8 @@ int main() {
     return 0;
 }
 ```
+
+<hr>
 
 > Tableaux
 
