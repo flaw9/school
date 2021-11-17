@@ -22,7 +22,7 @@ int main() {
     printf("La moyenne est: %f\n", m);
     // recherche du premier element plus grand que 0.9
     for (i=0; i < N && tab[i] < 0.9; i++);
-    if (i <N)
+    if (i < N)
         printf("Élement trouvé %f en position_%d\n", tab[i], i);
     else
         printf("Aucun élément trouvé \n");
