@@ -17,7 +17,7 @@ int main() {
     // calcul de la moyenne des nombres dans le tableau
     float m = 0;
     for (i=0; i<N; i++)
-        mt= tab[i];
+        m += tab[i];
     m /= N;
     printf("La moyenne est: %f\n", m);
     // recherche du premier element plus grand que 0.9
