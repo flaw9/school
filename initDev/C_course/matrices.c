@@ -13,7 +13,7 @@ void saisiMat() {
 
 void afficherMat(float mat[]) {
     int i, o;
-    for(i=0;i<sizeof(mat),i++) {
+    for(i=0;i<sizeof(mat);i++) {
         printf("|");
         for(o=0;o<sizeof(mat[i]);o++) {
             printf("%f", mat[i][o]);
