@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void saisiMat() {
+saisiMat() {
     int lar, lon;
     printf("Saisir la largeur: ");
     scanf("%d", &lar);
@@ -8,7 +8,7 @@ void saisiMat() {
     scanf("%d", &lon);
     float tab1[lon][lar];
     float tab2[lon][lar];
-    return tab1, tab2;
+    // return tab1, tab2;
 }
 
 void afficherMat(float mat[]) {
