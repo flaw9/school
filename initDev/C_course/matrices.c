@@ -35,5 +35,5 @@ int main() {
 
     printf("Matrices générées.\n");
     printf("Matrice n°1: \n");
-    // afficherMat(tab1);
+    afficherMat(tab1);
 }
