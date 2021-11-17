@@ -11,7 +11,7 @@ void saisiMat() {
     // return tab1, tab2;
 }
 
-void afficherMat(float mat[float []]) {
+void afficherMat(float mat[][]) {
     int i, o;
     for(i=0;i<sizeof(mat);i++) {
         printf("|");
