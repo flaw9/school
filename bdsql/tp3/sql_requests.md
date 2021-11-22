@@ -113,5 +113,5 @@ SELECT * from resultatPiloteBelgique;
 ```sql
 SELECT NoPil FROM Pilote WHERE NatPil = "Allemand";
 
-SELECT min(r.Place) FROM Resultat WHERE NoPil = (SELECT NoPil FROM Pilote WHERE NatPil = "Allemand");
+SELECT min(Place) FROM Resultat WHERE NoPil IN (SELECT NoPil FROM Pilote WHERE NatPil = "Allemand");
 ```
