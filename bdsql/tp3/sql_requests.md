@@ -75,7 +75,7 @@ SELECT COUNT(g.RecTour), p.NomPil, v.NomTV FROM Pilote as p, GrandPrix as g, Typ
 >> Fonctionne pas
 
 ```sql
-SELECT p.NomPil, v.NomTV, COUNT(*) from Pilote as p, TypeVoiture as v, Resultat as r  WHERE p.NoTV = v.NoTV AND r.NoPil = p.NoPil WHERE r.Place = 99 GROUP BY p.NomPil HAVING COUNT(*) >= 2
+SELECT p.NomPil, v.NomTV from Pilote as p, TypeVoiture as v, Resultat as r  WHERE p.NoTV = v.NoTV AND r.NoPil = p.NoPil AND r.Place = 99 GROUP BY p.NomPil HAVING COUNT(*) >= 2
 ```
 
 ## 10.
@@ -93,5 +93,5 @@ SELECT p.NomPil, r.PtObt FROM Pilote as p, Resultat as r, GrandPrix as g WHERE p
 ## 12.
 
 ```sql
-SELECT p.NomPil, r.PtObt 
+SELECT p.NomPil, COUNT(r.PtObt) FROM Pilote as P, Resultat as r WHERE r.NoPil = p.NoPil GROUP BY p.NomPil;
 ```
