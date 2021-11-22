@@ -87,7 +87,7 @@ SELECT v.NomTV, AVG(r.PtObt) FROM TypeVoiture as v, Resultat as r, Pilote as p W
 ## 11.
 
 ```sql
-SELECT p.NomPil, r.PtObt FROM Pilote as p, Resultat as r, GrandPrix as g WHERE p.NoPil = r.NoPil AND r.NoGP = g.NoGP AND g.NomGP = "Italie" ORDER BY r.PtObt DESC;
+SELECT p.NomPil, r.PtObt FROM Pilote as p, Resultat as r, GrandPrix as g WHERE p.NoPil = r.NoPil AND r.NoGP = g.NoGP AND g.NomGP = "Italie" AND r.Place < 99 ORDER BY r.PtObt DESC;
 ```
 
 ## 12.
