@@ -1,3 +1,16 @@
+# 2) Création et modélisation de la BD
+
+## b.
+
+```sql
+CREATE TABLE IF NOT EXISTS Pilote (
+    NoPil int NOT NULL PRIMARY KEY,
+    NomPil text NOT NULL,
+    NatPil text NOT NULL,
+    NoTV int NOT NULL,
+);
+```
+
 # 3) Éxécution de requêtes SQL
 
 ## 1.
@@ -19,4 +32,10 @@ SELECT NomPil FROM Pilote JOIN GrandPrix ON Pilote.NoPil = GrandPrix.NoPil WHERE
 
 ```sql
 SELECT NomPil FROM Pilote WHERE NoPil = (SELECT NoPil FROM GrandPrix WHERE NomGP = "Monaco");
+```
+
+## 3.
+
+```sql
+SELECT p.NomPil, v.NomTV FROM Pilote as p, TypeVoiture as v, GrandPrix as gp JOIN resultat as r ON gp.NoGP = r.NoGP AND r.NoPil = p.NoPil WHERE r.PtObt = max(r.PtObt);
 ```
