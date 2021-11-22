@@ -107,3 +107,11 @@ insert into resultatPiloteBelgique select r.NoPil, p.Nompil, r.Place, r.PtObt fr
 
 SELECT * from resultatPiloteBelgique;
 ```
+
+## 15.
+
+```sql
+SELECT NoPil FROM Pilote WHERE NatPil = "Allemand";
+
+SELECT min(r.Place) FROM Resultat WHERE NoPil = (SELECT NoPil FROM Pilote WHERE NatPil = "Allemand");
+```
