@@ -36,10 +36,8 @@ SELECT NomPil FROM Pilote WHERE NoPil = (SELECT NoPil FROM GrandPrix WHERE NomGP
 
 ## 3.
 
->> Fonctionne pas !
-
 ```sql
-SELECT p.NomPil, v.NomTV FROM Pilote as p, TypeVoiture as v, GrandPrix as gp WHERE gp.NoPil = p.NoPil AND gp.NomGP = "Monza";
+SELECT p.NomPil, v.NomTV FROM Pilote as p, TypeVoiture as v, GrandPrix as gp WHERE gp.NoPil = p.NoPil AND gp.LieuCirc = "Monza" AND p.NoTV = v.NoTV;
 ```
 
 ## 4.
@@ -71,3 +69,4 @@ SELECT COUNT(r.NoGP), p.NomPil FROM Pilote as p, Resultat as r WHERE r.NoPil = p
 ```sql
 SELECT COUNT(g.RecTour), p.NomPil, v.NomTV FROM Pilote as p, GrandPrix as g, TypeVoiture as v WHERE g.NoPil = p.NoPil AND p.NoTV = v.NoTV GROUP BY p.NomPil;
 ```
+
