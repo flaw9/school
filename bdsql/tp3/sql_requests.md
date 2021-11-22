@@ -93,5 +93,5 @@ SELECT p.NomPil, r.PtObt FROM Pilote as p, Resultat as r, GrandPrix as g WHERE p
 ## 12.
 
 ```sql
-SELECT p.NomPil, COUNT(r.PtObt) FROM Pilote as P, Resultat as r WHERE r.NoPil = p.NoPil GROUP BY p.NomPil;
+SELECT p.NomPil, SUM(r.PtObt) as score FROM Pilote as P, Resultat as r WHERE r.NoPil = p.NoPil GROUP BY p.NomPil ORDER BY score DESC;
 ```
