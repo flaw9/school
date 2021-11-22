@@ -47,3 +47,9 @@ SELECT p.NomPil, v.NomTV FROM Pilote as p, TypeVoiture as v, GrandPrix as gp WHE
 ```sql
 SELECT DISTINCT NatPil FROM Pilote as p JOIN TypeVoiture as t ON p.NoTV = t.NoTV WHERE NomTV = "Williams";
 ```
+
+## 5.
+
+```sql
+SELECT g.NomGP, g.DateGP, p.NomPil, v.NomTV FROM GrandPrix as g, Pilote as p, TypeVoiture as t WHERE g.NoPil = p.NoPil AND p.NoTV = t.NoTV ORDER BY g.DateGP;
+```
