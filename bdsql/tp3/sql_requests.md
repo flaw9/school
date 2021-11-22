@@ -5,3 +5,14 @@
 ```sql
 SELECT NomPil FROM Pilote JOIN TypeVoiture ON Pilote.NoTV = TypeVoiture.NoTV AND Moteur = "Renault";
 ```
+
+```sql
+SELECT NomPil FROM Pilote WHERE NoTV = (SELECT NoTV FROM TypeVoiture WHERE Moteur = "Renault");
+```
+
+
+## 2.
+
+```sql
+
+```
