@@ -37,7 +37,7 @@ SELECT NomPil FROM Pilote WHERE NoPil = (SELECT NoPil FROM GrandPrix WHERE NomGP
 ## 3.
 
 ```sql
-SELECT p.NomPil, v.NomTV FROM Pilote as p, TypeVoiture as v, GrandPrix as gp JOIN resultat as r ON gp.NoGP = r.NoGP WHERE r.NoPil = p.NoPil AND r.PtObt = (SELECT MAX(PtObt) FROM resultat);
+SELECT p.NomPil, v.NomTV FROM Pilote as p, TypeVoiture as v, GrandPrix as gp JOIN resultat as r ON gp.NoGP = r.NoGP WHERE r.NoPil = p.NoPil AND r.PtObt = (SELECT MAX(PtObt) FROM resultat) AND gp.NomGP = "Monza";
 ```
 
 ## 4.
