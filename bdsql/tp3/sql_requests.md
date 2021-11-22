@@ -69,5 +69,5 @@ SELECT COUNT(r.NoGP), p.NomPil FROM Pilote as p, Resultat as r WHERE r.NoPil = p
 ## 8.
 
 ```sql
-SELECT COUNT(g.NoGP), p.NomPil FROM Pilote as p, GrandPrix as g WHERE g.NoPil = p.NoPil GROUP BY p.NomPil;
+SELECT COUNT(g.NoGP), p.NomPil, v.NomTV FROM Pilote as p, GrandPrix as g, TypeVoiture as v WHERE g.NoPil = p.NoPil AND p.NoTV = v.NoTV GROUP BY p.NomPil;
 ```
