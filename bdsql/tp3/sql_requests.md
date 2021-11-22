@@ -70,3 +70,8 @@ SELECT COUNT(r.NoGP), p.NomPil FROM Pilote as p, Resultat as r WHERE r.NoPil = p
 SELECT COUNT(g.RecTour), p.NomPil, v.NomTV FROM Pilote as p, GrandPrix as g, TypeVoiture as v WHERE g.NoPil = p.NoPil AND p.NoTV = v.NoTV GROUP BY p.NomPil;
 ```
 
+## 10.
+
+```sql
+SELECT v.NomTV, AVG(r.PtObt) FROM TypeVoiture as v, Resultat as v, Pilote as p WHERE r.NoPil = p.NoPil AND p.NoTV = v.NoTV GROUP BY v.NomTV
+```
