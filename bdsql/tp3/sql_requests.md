@@ -57,5 +57,11 @@ SELECT g.NomGP, g.DateGP, p.NomPil, t.NomTV FROM GrandPrix as g, Pilote as p, Ty
 ## 6.
 
 ```sql
+SELECT COUNT(r.NoGP), p.NomPil FROM Pilote as p, Resultat as r WHERE r.NoPil = p.NoPil GROUP BY p.NomPil;
+```
+
+## 7.
+
+```sql
 SELECT COUNT(g.NoGP), p.NomPil FROM Pilote as p, GrandPrix as g WHERE g.NoPil = p.NoPil GROUP BY p.NomPil;
 ```
