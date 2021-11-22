@@ -95,3 +95,15 @@ SELECT p.NomPil, r.PtObt FROM Pilote as p, Resultat as r, GrandPrix as g WHERE p
 ```sql
 SELECT p.NomPil, SUM(r.PtObt) as score FROM Pilote as P, Resultat as r WHERE r.NoPil = p.NoPil GROUP BY p.NomPil ORDER BY score DESC;
 ```
+
+***
+
+## 13.
+
+```sql
+CREATE TEMPORARY TABLE resultatPiloteBelgique ( NoPil int(11) NOT NULL DEFAULT '0', NomPil varchar(15) NOT NULL DEFAULT '', Place int(11) NOT NULL DEFAULT '0', PtObt int(11) NOT NULL DEFAULT '0', PRIMARY KEY (NoPil,NomPil) ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+insert into resultatPiloteBelgique select r.NoPil, p.Nompil, r.Place, r.PtObt from resultat as r, pilote as p where r.NoGP=11 and r.NoPil=p.NoPil;
+
+SELECT * from resultatPiloteBelgique;
+```
