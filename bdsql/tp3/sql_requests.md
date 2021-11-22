@@ -116,5 +116,5 @@ SELECT NoPil FROM Pilote WHERE NatPil = "Allemagne";
 DECLARE @GP AS INT=3
 SELECT min(Place) FROM Resultat WHERE NoPil IN (SELECT NoPil FROM Pilote WHERE NatPil = "Allemagne") AND NoGP = @GP;
 
-SELECT g.NoGP, min(r.Place) FROM Resultat as r, GrandPrix as g WHERE g.NoGP = r.NoGP AND NoPil IN (SELECT NoPil FROM Pilote WHERE NatPil = "Allemagne") GROUP BY g.NoGP;
+SELECT g.NoGP, min(r.Place) FROM Resultat as r, GrandPrix as g WHERE g.NoGP = r.NoGP AND r.NoPil IN (SELECT NoPil FROM Pilote WHERE NatPil = "Allemagne") GROUP BY g.NoGP;
 ```
