@@ -36,12 +36,14 @@ SELECT NomPil FROM Pilote WHERE NoPil = (SELECT NoPil FROM GrandPrix WHERE NomGP
 
 ## 3.
 
+>> Fonctionne pas !
+
 ```sql
-SELECT p.NomPil, v.NomTV FROM Pilote as p, TypeVoiture as v, GrandPrix as gp WHERE gp.NoPil = p.NoPil WHERE gp.NomGP = "Monza";
+SELECT p.NomPil, v.NomTV FROM Pilote as p, TypeVoiture as v, GrandPrix as gp WHERE gp.NoPil = p.NoPil AND gp.NomGP = "Monza";
 ```
 
 ## 4.
 
 ```sql
-SELECT DISTINCT NatPil FROM Pilotes as p JOIN TypeVoiture as tv ON p.NoTV = t.NoTV WHERE NomTV = "Williams";
+SELECT DISTINCT NatPil FROM Pilote as p JOIN TypeVoiture as t ON p.NoTV = t.NoTV WHERE NomTV = "Williams";
 ```
