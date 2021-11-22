@@ -111,7 +111,8 @@ SELECT * from resultatPiloteBelgique;
 ## 15.
 
 ```sql
-SELECT NoPil FROM Pilote WHERE NatPil = "Allemand";
+SELECT NoPil FROM Pilote WHERE NatPil = "Allemagne";
 
-SELECT min(Place) FROM Resultat WHERE NoPil IN (SELECT NoPil FROM Pilote WHERE NatPil = "Allemand");
+DECLARE @GP AS INT=3
+SELECT min(Place) FROM Resultat WHERE NoPil IN (SELECT NoPil FROM Pilote WHERE NatPil = "Allemagne") AND NoGP = @GP;
 ```
