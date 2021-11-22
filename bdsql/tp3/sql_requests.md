@@ -51,5 +51,11 @@ SELECT DISTINCT NatPil FROM Pilote as p JOIN TypeVoiture as t ON p.NoTV = t.NoTV
 ## 5.
 
 ```sql
-SELECT g.NomGP, g.DateGP, p.NomPil, v.NomTV FROM GrandPrix as g, Pilote as p, TypeVoiture as t WHERE g.NoPil = p.NoPil AND p.NoTV = t.NoTV ORDER BY g.DateGP;
+SELECT g.NomGP, g.DateGP, p.NomPil, t.NomTV FROM GrandPrix as g, Pilote as p, TypeVoiture as t WHERE g.NoPil = p.NoPil AND p.NoTV = t.NoTV ORDER BY g.DateGP;
+```
+
+## 6.
+
+```sql
+SELECT COUNT(g.NoGP), p.NomPil FROM Pilote as p, GrandPrix as g WHERE g.NoPil = p.NoPil GROUP BY p.NomPil;
 ```
