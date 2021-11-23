@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 void swap(float *x, float *y)
+    /* Échange les valeurs de x et de y. */
 {
     float tmp=*x;
     *x=*y;
