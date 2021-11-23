@@ -7,6 +7,10 @@ void ajouter(float *tab, int N)
     return;
 }
 
+void printTab(float *tab, int N)
+{
+    for(int i=0; i<N; printf("%f\n", tab[i++]));
+}
 
 int main()
 {
@@ -15,12 +19,12 @@ int main()
 
     for(int i=0; i<N; i++) tab[i] = i;
 
-    for(int i=0; i<N; i++) printf("%f\n", tab[i]);
-    
+    printTab(tab, N);
+
     printf("---\n");
     ajouter(tab, N);
 
-    for(int i=0; i<N; i++) printf("%f\n", tab[i]);
+    printTab(tab, N);
 
     return 0;
 }
