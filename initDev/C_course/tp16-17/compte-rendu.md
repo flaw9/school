@@ -9,6 +9,3 @@
 
 2.
   Le programme ne fonctionne pas car lla fonction `swap` prend les valeurs des variables et les modifie mais les variables de la fonction `main` restent inchangées.
-
-## 5
-
