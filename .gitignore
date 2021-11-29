@@ -5,4 +5,4 @@ ignore
 *.odt
 /*.odt
 /*.ignore
-initDev/C_course/*executables/
+initDev/C_Course/**executables/
