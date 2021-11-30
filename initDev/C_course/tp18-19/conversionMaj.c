@@ -3,10 +3,10 @@
 
 #define TAILLE 80
 
-void afficherMat(char *mat) {
+void afficherMajs(char *tab) {
     int i;
-    for(i=0;i<sizeof(mat);i++) {
-        putchar(mat[i]);
+    for(i=0;i<sizeof(tab);i++) {
+        putchar(tab[i]);
     }
     printf("\n");
 }
@@ -23,6 +23,6 @@ int main() {
     for(i=0; i < TAILLE && lettre[i] != '\n'; i++)
         majs[i] = toupper(lettre[i]);
     
-    afficherMat(majs);
+    afficherMajs(majs);
     return 0;
 }
