@@ -26,7 +26,7 @@ int main()
         if(i < sizeof(chiffres)) {
             printf("chiffres[%i] = %i", i, chiffres[i]);
         }
-        if(i < sizeof(x) && x[i] != '\n') {
+        if(i < sizeof(x) && x[i] != 0) {
             printf("\tx[%i] = %f", i, x[i]);
         }
         if(i < sizeof(couleur)) {
