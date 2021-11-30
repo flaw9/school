@@ -6,7 +6,7 @@
 void afficherMat(char *mat) {
     int i;
     for(i=0;i<sizeof(mat);i++) {
-        printf("%d", mat[i]);
+        putchar(mat[i]);
     }
 }
 
