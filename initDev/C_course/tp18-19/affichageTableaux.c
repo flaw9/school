@@ -3,6 +3,9 @@
 
 int main()
 {
+    int *chiffres;
+    float *x;
+    char *couleur;
 
     int maxSize = 1;
     for(int i = 0; i < 3; i++) {
