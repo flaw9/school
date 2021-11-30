@@ -1,36 +1,34 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define SIZE1 (rand() % 10 + 1)
+#define SIZE2 (rand() % 10 + 1)
+
 int main()
 {
-    int *chiffres;
-    float *x;
-    char *couleur;
+    int maxSize = SIZE1;
+    if(SIZE2 > maxSize) maxSize = SIZE2;
 
-    int maxSize = 1;
+    int chiffres[SIZE1];
+    int x[SIZE2];
+    int couleurs[3] = {'R', 'V', 'B'};
+
     for(int i = 0; i < 3; i++) {
-        int taille = rand() % 10 + 1;
-        if (taille > maxSize) maxSize = taille;
         if(i == 0) {
-            // int chiffres[taille];
-            for(int o = 0; o < taille; o++)
+            for(int o = 0; o < SIZE1; o++)
                 chiffres[o] = rand() % 10 + 1;
         } else if(i == 1) {
-            // float x[taille];
-            for(int o = 0; o < taille; o++)
+            for(int o = 0; o < SIZE2; o++)
                 x[o] = rand() % 100 / 10;
-        } 
-        // else if(i == 2) {
-        //     char couleur[3] = {'R', 'V', 'B'};
-        // }
+        }
     }
 
     for(int i = 0; i < maxSize; i++)
     {
-        if(i < sizeof(chiffres)) {
+        if(i < SIZE1) {
             printf("chiffres[%i] = %i", i, chiffres[i]);
         }
-        if(i < sizeof(x) && x[i] != 0) {
+        if(i < SIZE2 && x[i] != 0) {
             printf("\tx[%i] = %f", i, x[i]);
         }
         // if(i < sizeof(couleur)) {
