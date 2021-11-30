@@ -4,8 +4,6 @@ int main() {
     int nbElements;
     printf("Nombre d'elements: ");
     scanf("%d", &nbElements);
-    
-    printf("%d\n", nbElements);
 
     float tab[nbElements];
 
@@ -15,6 +13,6 @@ int main() {
     }
 
     for (int i = 0; i < nbElements; i++) {
-        printf("%f", tab[i]);
+        printf("%ld", tab[i]);
     }
 }
