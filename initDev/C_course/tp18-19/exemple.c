@@ -2,8 +2,8 @@
 
 void afficherTab(int *tab) {
     int i;
-    for(i=0;i<sizeof(tab);i++) {
-        printf("%d\t", tab[i]);
+    for(i=0;i<99;i++) {
+        printf("%d ", tab[i]);
     }
     printf("\n");
 }
