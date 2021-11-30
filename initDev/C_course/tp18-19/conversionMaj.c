@@ -8,6 +8,7 @@ void afficherMat(char *mat) {
     for(i=0;i<sizeof(mat);i++) {
         putchar(mat[i]);
     }
+    printf("\n");
 }
 
 int main() {
