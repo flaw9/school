@@ -12,15 +12,15 @@ int main()
         int taille = rand() % 10 + 1;
         if (taille > maxSize) maxSize = taille;
         if(i == 0) {
-            int chiffres[taille];
+            // int chiffres[taille];
             for(int o = 0; o < taille; o++)
                 chiffres[o] = rand() % 10 + 1;
         } else if(i == 1) {
-            float x[taille];
+            // float x[taille];
             for(int o = 0; o < taille; o++)
                 x[o] = rand() % 100 / 10;
         } else if(i == 2) {
-            char couleur[3] = {'R', 'V', 'B'};
+            couleur[3] = {'R', 'V', 'B'};
         }
     }
 
