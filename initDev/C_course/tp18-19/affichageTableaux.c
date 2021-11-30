@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define MAX 6
+#define MAX 7
 
 int main()
 {
