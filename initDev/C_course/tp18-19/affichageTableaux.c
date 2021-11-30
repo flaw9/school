@@ -6,6 +6,7 @@
 
 int main()
 {
+    printf("%i ; %i", SIZE1, SIZE2);
     int max = SIZE1;
     if (SIZE2 > max) max = SIZE2;
 
@@ -19,7 +20,6 @@ int main()
     }
     char couleur[3] = {'R', 'V', 'B'};
 
-    printf("%i\n", sizeof(x));
     for(int i = 0; i < max; i++)
     {
         if(i < SIZE1) {
