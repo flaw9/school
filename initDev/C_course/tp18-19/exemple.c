@@ -2,7 +2,7 @@
 
 void afficherTab(int *tab) {
     int i;
-    for(i=0;i<20;i++) {
+    for(i=0;i<16;i++) {
         printf("%d\n", tab[i]);
     }
     printf("\n");
