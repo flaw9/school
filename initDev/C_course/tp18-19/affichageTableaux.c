@@ -19,9 +19,9 @@ int main()
             // float x[taille];
             for(int o = 0; o < taille; o++)
                 x[o] = rand() % 100 / 10;
-        } else if(i == 2) {
-            char couleur[3] = {'R', 'V', 'B'};
-        }
+        // } else if(i == 2) {
+        //     char couleur[3] = {'R', 'V', 'B'};
+        // }
     }
 
     for(int i = 0; i < maxSize; i++)
@@ -32,9 +32,9 @@ int main()
         if(i < sizeof(x) && x[i] != 0) {
             printf("\tx[%i] = %f", i, x[i]);
         }
-        if(i < sizeof(couleur)) {
-            printf("\tcouleur[%i] = '%c'", i, couleur[i]);
-        }
+        // if(i < sizeof(couleur)) {
+        //     printf("\tcouleur[%i] = '%c'", i, couleur[i]);
+        // }
         printf("\n");
     }
 }
