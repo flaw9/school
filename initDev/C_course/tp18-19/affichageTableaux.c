@@ -41,9 +41,11 @@ int main() {
     char couleur[3] = {'R', 'V', 'B'};
 
     for (int i = 0; i < 3; i++) {
-        for (int o = 0; o < 6; o++) printf("chiffres[%i] = %i", i, chiffres[i]);
-        for (int o = 0; o < 5; o++) printf("x[%i] = %f", i, x[i]);
-        for (int o = 0; o < 3; o++) printf("couleur[%i] = %c", i, couleur[i]);
+        for (int o = 0; o < 6; o++) {
+            printf("chiffres[%i] = %i", i, chiffres[i]);
+            if (i < 5) printf("x[%i] = %f", i, x[i]);
+            if (i < 3) printf("couleur[%i] = %c", i, couleur[i]);
+        }
         printf("\n");
     }
 }
