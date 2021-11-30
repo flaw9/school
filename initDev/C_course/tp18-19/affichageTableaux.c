@@ -31,7 +31,7 @@ int main()
         if(i < SIZE2 && x[i] != 0) {
             printf("\tx[%i] = %f", i, x[i]);
         }
-        if(i < sizeof(couleur)) {
+        if(i < 3) {
             printf("\tcouleur[%i] = '%c'", i, couleur[i]);
         }
         printf("\n");
