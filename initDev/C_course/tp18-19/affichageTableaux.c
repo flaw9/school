@@ -1,36 +1,49 @@
 #include <stdio.h>
 #include<stdlib.h>
 
-#define SIZE1 abs(rand() % 10 + 1)
-#define SIZE2 abs(rand() % 10 + 1)
+// #define SIZE1 abs(rand() % 10 + 1)
+// #define SIZE2 abs(rand() % 10 + 1)
 
-int main()
-{
-    printf("%i ; %i\n", SIZE1, SIZE2);
-    int max = SIZE1;
-    if (SIZE2 > max) max = SIZE2;
+// int main()
+// {
+//     printf("%i ; %i\n", SIZE1, SIZE2);
+//     int max = SIZE1;
+//     if (SIZE2 > max) max = SIZE2;
 
-    int chiffres[SIZE1];
-    for (int i = 0; i < SIZE1; i++) {
-        chiffres[i] = abs(rand() % 10 + 1);
-    }
-    float x[SIZE2];
-    for (int i = 0; i < SIZE1; i++) {
-        x[i] = abs(rand() % 100);
-    }
+//     int chiffres[SIZE1];
+//     for (int i = 0; i < SIZE1; i++) {
+//         chiffres[i] = abs(rand() % 10 + 1);
+//     }
+//     float x[SIZE2];
+//     for (int i = 0; i < SIZE1; i++) {
+//         x[i] = abs(rand() % 100);
+//     }
+//     char couleur[3] = {'R', 'V', 'B'};
+
+//     for(int i = 0; i < max; i++)
+//     {
+//         if(i < SIZE1) {
+//             printf("chiffres[%i] = %i", i, chiffres[i]);
+//         }
+//         if(i < SIZE2) {
+//             printf("\tx[%i] = %f", i, x[i]);
+//         }
+//         if(i < 3) {
+//             printf("\tcouleur[%i] = '%c'", i, couleur[i]);
+//         }
+//         printf("\n");
+//     }
+// }
+
+int main() {
+    int chiffres[6] = {1, 2, 3, 4, 5, 6}:
+    float x[5] = {0.14, 1.22, 3, 4.5, 78};
     char couleur[3] = {'R', 'V', 'B'};
 
-    for(int i = 0; i < max; i++)
-    {
-        if(i < SIZE1) {
-            printf("chiffres[%i] = %i", i, chiffres[i]);
-        }
-        if(i < SIZE2) {
-            printf("\tx[%i] = %f", i, x[i]);
-        }
-        if(i < 3) {
-            printf("\tcouleur[%i] = '%c'", i, couleur[i]);
-        }
+    for (int i = 0; i < 3; i++) {
+        for (int o = 0; o < 6; o++) printf("chiffres[%i] = %i", i, chiffres[i]);
+        for (int o = 0; o < 5; o++) printf("x[%i] = %f", i, x[i]);
+        for (int o = 0; o < 3; o++) printf("couleur[%i] = %c", i, couleur[i]);
         printf("\n");
     }
 }
