@@ -1,12 +1,13 @@
 #include <stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
 int main()
 {
 
+    int maxSize = 1;
     for(int i = 0; i < 3; i++) {
         int taille = rand() % 10 + 1;
-
+        if (taille > maxSize) maxSize = taille;
         if(i == 0) {
             int chiffres[taille];
             for(int o = 0; o < taille; o++)
@@ -20,8 +21,7 @@ int main()
         }
     }
 
-    printf("%i\n", sizeof(x));
-    for(int i = 0; i < MAX; i++)
+    for(int i = 0; i < maxSize; i++)
     {
         if(i < sizeof(chiffres)) {
             printf("chiffres[%i] = %i", i, chiffres[i]);
