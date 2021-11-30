@@ -7,9 +7,9 @@ int main() {
 
     float tab[nbElements];
 
+    printf("Valeurs: ");
     for (int i = 0; i < nbElements; i++) {
-        printf("Valeur n°%d: ", i+1);
-        scanf("%ld\n", &tab[i]);
+        scanf("%ld", &tab[i]);
     }
 
     for (int i = 0; i < nbElements; i++) {
