@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SIZE1 (rand() % 10 + 1)
-#define SIZE2 (rand() % 10 + 1)
+#define SIZE1 abs(rand() % 10 + 1)
+#define SIZE2 abs(rand() % 10 + 1)
 
 int main()
 {
@@ -16,10 +16,10 @@ int main()
     for(int i = 0; i < 2; i++) {
         if(i == 0) {
             for(int o = 0; o < SIZE1; o++)
-                chiffres[o] = rand() % 10 + 1;
+                chiffres[o] = abs(rand() % 10 + 1);
         } else if(i == 1) {
             for(int o = 0; o < SIZE2; o++)
-                x[o] = rand() % 100 / 10;
+                x[o] = abs(rand() % 100 / 10);
         }
     }
 
