@@ -29,10 +29,10 @@ int main()
             printf("chiffres[%i] = %i", i, chiffres[i]);
         }
         if(i < SIZE2 && x[i] != 0) {
-            printf("\tx[%i] = %f", i, x[i]);
+            printf("\t x[%i] = %f", i, x[i]);
         }
         if(i < sizeof(couleur)) {
-            printf("\tcouleur[%i] = '%c'", i, couleur[i]);
+            printf("\t couleur[%i] = '%c'", i, couleur[i]);
         }
         printf("\n");
     }
