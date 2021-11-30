@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void afficherTab(char *tab) {
+void afficherTab(int *tab) {
     int i;
     for(i=0;i<sizeof(tab);i++) {
         printf("%d", tab[i]);
