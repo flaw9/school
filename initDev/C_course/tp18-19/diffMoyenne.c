@@ -4,6 +4,8 @@ int main() {
     int nbElements;
     scanf("Nombre d'elements: %i", nbElements);
     
+    printf("%i", nbElements);
+
     float tab[nbElements];
 
     for (int i = 0; i < nbElements; i++) {
