@@ -11,7 +11,7 @@ int main()
 
     int chiffres[SIZE1];
     int x[SIZE2];
-    int couleurs[3] = {'R', 'V', 'B'};
+    int couleur[3] = {'R', 'V', 'B'};
 
     for(int i = 0; i < 2; i++) {
         if(i == 0) {
@@ -31,7 +31,7 @@ int main()
         if(i < SIZE2 && x[i] != 0) {
             printf("\tx[%i] = %f", i, x[i]);
         }
-        if(i < 3) {
+        if(i < sizeof(couleur)) {
             printf("\tcouleur[%i] = '%c'", i, couleur[i]);
         }
         printf("\n");
