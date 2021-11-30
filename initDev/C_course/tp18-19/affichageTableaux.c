@@ -15,7 +15,7 @@ int main()
     }
     float x[SIZE2];
     for (int i = 0; i < SIZE1; i++) {
-        x[i] = abs(rand() % 100 / 10);
+        x[i] = abs(rand() % 100);
     }
     char couleur[3] = {'R', 'V', 'B'};
 
