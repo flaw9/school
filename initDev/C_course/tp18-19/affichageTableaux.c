@@ -11,13 +11,13 @@ int main()
     for(int i = 0; i < MAX; i++)
     {
         if(i < sizeof(chiffres)) {
-            printf("%i", chiffres[i]);
+            printf("chiffres[%i] = %i", i, chiffres[i]);
         }
         if(i < sizeof(x)) {
-            printf("%f", x[i]);
+            printf("\tx[%i] = %f", i, x[i]);
         }
         if(i < sizeof(couleur)) {
-            printf("%d", couleur[i]);
+            printf("\tcouleur[%i] = %c", i, couleur[i]);
         }
         printf("\n");
     }
