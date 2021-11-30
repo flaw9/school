@@ -13,7 +13,7 @@ int main()
     int x[SIZE2];
     int couleurs[3] = {'R', 'V', 'B'};
 
-    for(int i = 0; i < 3; i++) {
+    for(int i = 0; i < 2; i++) {
         if(i == 0) {
             for(int o = 0; o < SIZE1; o++)
                 chiffres[o] = rand() % 10 + 1;
@@ -31,9 +31,9 @@ int main()
         if(i < SIZE2 && x[i] != 0) {
             printf("\tx[%i] = %f", i, x[i]);
         }
-        // if(i < sizeof(couleur)) {
-        //     printf("\tcouleur[%i] = '%c'", i, couleur[i]);
-        // }
+        if(i < sizeof(couleur)) {
+            printf("\tcouleur[%i] = '%c'", i, couleur[i]);
+        }
         printf("\n");
     }
 }
