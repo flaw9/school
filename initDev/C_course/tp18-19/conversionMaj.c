@@ -3,6 +3,13 @@
 
 #define TAILLE 80
 
+void afficherMat(float *mat) {
+    int i;
+    for(i=0;i<sizeof(mat);i++) {
+        printf("%f", mat[i]);
+    }
+}
+
 int main() {
     char lettre[TAILLE];
     char majs[TAILLE];
@@ -14,6 +21,7 @@ int main() {
     /* Affichage d'une ligne de texte convertie */
     for(i=0; i < TAILLE && lettre[i] != '\n'; i++)
         majs[i] = toupper(lettre[i]);
-    printf("\n");
+    
+    afficherMat(majs);
     return 0;
 }
