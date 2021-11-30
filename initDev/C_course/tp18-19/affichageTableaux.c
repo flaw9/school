@@ -39,7 +39,7 @@ int main() {
     int chiffres[6] = {1, 2, 3, 4, 5, 6};
     float x[5] = {0.14, 1.22, 3, 4.5, 78};
     char couleur[3] = {'R', 'V', 'B'};
-    for (int o = 0; o < 6; o++) {
+    for (int i = 0; i < 6; i++) {
         printf("chiffres[%i] = %i", i, chiffres[i]);
         if (i < 5) printf("\tx[%i] = %f", i, x[i]);
         if (i < 3) printf("\tcouleur[%i] = %c", i, couleur[i]);
