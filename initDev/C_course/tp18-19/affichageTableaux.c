@@ -20,7 +20,7 @@ int main()
     char couleur[3] = {'R', 'V', 'B'};
 
     printf("%i\n", sizeof(x));
-    for(int i = 0; i < ; i++)
+    for(int i = 0; i < max; i++)
     {
         if(i < SIZE1) {
             printf("chiffres[%i] = %i", i, chiffres[i]);
