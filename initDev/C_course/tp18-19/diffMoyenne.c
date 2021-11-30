@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 int main() {
-    float tab[];
     int nbElements;
-    scanf("%i", nbElements);
+    float tab[nbElements];
+    scanf("Nombre d'elements: %i", nbElements);
 
     for (int i = 0; i < nbElements; i++) {
         scanf("%f", tab[i]);
