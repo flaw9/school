@@ -11,7 +11,7 @@ int main() {
 
     for (int i = 0; i < nbElements; i++) {
         printf("Valeur n°%d: ", i+1);
-        scanf("%f", tab[i]);
+        scanf("%ld", tab[i]);
     }
 
     for (int i = 0; i < nbElements; i++) {
