@@ -9,7 +9,7 @@ int main() {
 
     for (int i = 0; i < nbElements; i++) {
         printf("Valeur n°%d: ", i+1);
-        scanf("%ld", &tab[i]);
+        scanf("%ld\n", &tab[i]);
     }
 
     for (int i = 0; i < nbElements; i++) {
