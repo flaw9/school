@@ -3,10 +3,10 @@
 
 #define TAILLE 80
 
-void afficherMat(float *mat) {
+void afficherMat(char *mat) {
     int i;
     for(i=0;i<sizeof(mat);i++) {
-        printf("%f", mat[i]);
+        printf("%s", mat[i]);
     }
 }
 
