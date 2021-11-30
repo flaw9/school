@@ -20,7 +20,7 @@ int main()
             for(int o = 0; o < taille; o++)
                 x[o] = rand() % 100 / 10;
         } else if(i == 2) {
-            couleur[3] = ['R', 'V', 'B'];
+            char couleur[3] = {'R', 'V', 'B'};
         }
     }
 
