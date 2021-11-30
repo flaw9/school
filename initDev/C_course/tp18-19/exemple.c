@@ -2,7 +2,7 @@
 
 void afficherTab(int *tab) {
     int i;
-    for(i=0;i<100;i++) {
+    for(i=0;i<20;i++) {
         printf("%d\n", tab[i]);
     }
     printf("\n");
@@ -10,7 +10,7 @@ void afficherTab(int *tab) {
 
 int main()
 {
-    int tab[] = { [0] = 42, [1] = 64, [99] = 100 };
+    int tab[] = { [0] = 42, [1] = 64, [15] = 100 };
     afficherTab(tab);
 }
 
