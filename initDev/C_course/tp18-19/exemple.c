@@ -3,7 +3,7 @@
 void afficherTab(int *tab) {
     int i;
     for(i=0;i<sizeof(tab);i++) {
-        printf("%d", tab[i]);
+        printf("%d\t", tab[i]);
     }
     printf("\n");
 }
