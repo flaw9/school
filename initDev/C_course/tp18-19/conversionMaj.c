@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <ctype.h>
 
-#define TAILLE 80
+#define TAILLE 60
 
 void afficherMajs(char *tab) {
     int i;
