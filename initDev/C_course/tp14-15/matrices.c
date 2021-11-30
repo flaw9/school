@@ -31,7 +31,7 @@ int main() {
     float tab2[N][N];
     float tab3[N][N];
     
-    printf("Size of tab1: %i\n", sizeof(tab2));
+    printf("Size of tab1: %i\n", sizeof(tab1));
 
     printf("Matrices générées.\n");
     printf("Matrice n°1: \n");
