@@ -13,6 +13,6 @@ int main() {
     }
 
     for (int i = 0; i < nbElements; i++) {
-        printf("%ld", &tab[i]);
+        printf("%ld", tab[i]);
     }
 }
