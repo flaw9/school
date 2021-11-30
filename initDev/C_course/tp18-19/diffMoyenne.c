@@ -2,14 +2,16 @@
 
 int main() {
     int nbElements;
-    scanf("Nombre d'elements: %d", &nbElements);
+    printf("Nombre d'elements: ");
+    scanf("%d", &nbElements);
     
-    printf("%d", nbElements);
+    printf("%d\n", nbElements);
 
     float tab[nbElements];
 
     for (int i = 0; i < nbElements; i++) {
-        scanf("Valeur n°%d: %f", i+1, tab[i]);
+        printf("Valeur n°%d: ", i+1);
+        scanf("%f", tab[i]);
     }
 
     for (int i = 0; i < nbElements; i++) {
