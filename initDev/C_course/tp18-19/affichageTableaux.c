@@ -6,6 +6,9 @@
 
 int main()
 {
+    int max = SIZE1;
+    if (SIZE2 > max) max = SIZE2;
+
     int chiffres[SIZE1];
     for (int i = 0; i < SIZE1; i++) {
         chiffres[i] = abs(rand() % 10 + 1);
@@ -17,7 +20,7 @@ int main()
     char couleur[3] = {'R', 'V', 'B'};
 
     printf("%i\n", sizeof(x));
-    for(int i = 0; i < 6; i++)
+    for(int i = 0; i < ; i++)
     {
         if(i < SIZE1) {
             printf("chiffres[%i] = %i", i, chiffres[i]);
