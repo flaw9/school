@@ -5,6 +5,7 @@
 
 int main() {
     char lettre[TAILLE];
+    char majs[TAILLE];
     int i=0;
 
     /* Lecture d'une ligne e */
@@ -12,7 +13,7 @@ int main() {
 
     /* Affichage d'une ligne de texte convertie */
     for(i=0; i < TAILLE && lettre[i] != '\n'; i++)
-        putchar(toupper(lettre[i]));
+        majs[i] = toupper(lettre[i]);
     printf("\n");
     return 0;
 }
