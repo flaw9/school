@@ -6,7 +6,7 @@
 
 int main()
 {
-    printf("%i ; %i", SIZE1, SIZE2);
+    printf("%i ; %i\n", SIZE1, SIZE2);
     int max = SIZE1;
     if (SIZE2 > max) max = SIZE2;
 
