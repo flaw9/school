@@ -133,9 +133,9 @@ Liste Supprimer(Liste L, int r) {
 Liste Concatener(Liste L1, Liste L2) {
   if (EstVide(L1)) { return L2; }
   else if (!EstVide(L2)) {
-    return SetSucc(Dernier(L), L2);
+    return SetSucc(Dernier(L1), L2);
   }
-  return L1
+  return L1;
 }
 
 Liste Ajouter(Liste L, Element E, int r) {
