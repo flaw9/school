@@ -47,7 +47,7 @@ int main() {
     // temps t3 = TempsCreer(12, 46, 38.64);
     // TempsAfficher(t3);
 
-    float sec = 243;
+    float sec = 243.5;
 
     temps t4 = TempsCreerSecondes(sec);
     TempsAfficher(t4);
