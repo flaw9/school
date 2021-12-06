@@ -55,26 +55,23 @@ temps TempsValider(temps t)
 {
     // int h, int m, int s;
     
-    do
+    while (t.secondes > 60)
     {
         t.minutes += 1;
         t.secondes -= 60;
-    } while (t.secondes > 60);
-    do
+    } while (t.secondes < 0)
     {
         t.minutes -= 1;
         t.secondes += 60;
-    } while (t.secondes < 0);
-    do
+    } while (t.minutes > 60)
     {
         t.heures += 1;
         t.minutes -= 60;
-    } while (t.minutes > 60);
-    do
+    } while (t.minutes < 0)
     {
         t.heures -= 1;
         t.minutes += 60;
-    } while (t.minutes < 0);
+    }
     return t;
 }
 
