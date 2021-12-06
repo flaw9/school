@@ -73,6 +73,14 @@ temps TempsValider(temps t)
     return t;
 }
 
+temps TempsAjouter(temps t1, temps t2)
+{
+    t1 = TempsValider(t1);
+    t2 = TempsValider(t2);
+
+
+}
+
 int main() {
     // temps t1;
     // t1.heures = 12;
@@ -83,7 +91,7 @@ int main() {
     // temps t2={12,46,38.64};
     // TempsAfficher(t2);
 
-    temps t3 = TempsCreer(0, -63, 0);
+    temps t3 = TempsCreer(12, -577, 3);
     TempsAfficher(t3);
     t3 = TempsValider(t3);
     TempsAfficher(t3);
