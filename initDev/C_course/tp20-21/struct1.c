@@ -103,7 +103,7 @@ int main() {
     // temps t2={12,46,38.64};
     // TempsAfficher(t2);
 
-    temps t3 = TempsCreer(-12, 577, 3);
+    temps t3 = TempsCreer(-2, 37, 3);
     temps t4 = TempsCreer(-1, 3, 10);
     TempsAfficher(t3);
     TempsAfficher(t4);
