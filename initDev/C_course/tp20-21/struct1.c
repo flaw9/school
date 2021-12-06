@@ -56,7 +56,7 @@ temps TempsValider(temps t)
     while (t.secondes > 60)
     {
         t.minutes += 1;
-        &t.secondes -= 60;
+        t.secondes -= 60;
     } while (t.secondes < 0)
     {
         t.minutes -= 1;
@@ -72,6 +72,7 @@ temps TempsValider(temps t)
     }
     // float tSec = TempsEnSecondes(t);
     // return TempsCreerSecondes(tSec);
+    return t;
 }
 
 int main() {
