@@ -107,7 +107,9 @@ Liste Rechercher(Liste L, Element E) {
   return L;
 }
 
-bool EstDans(Liste L, Element E) {& return !(EstVide(Rechercher(L, E))); }
+bool EstDans(Liste L, Element E) {
+  return !(EstVide(Rechercher(L, E)));
+}
 
 Liste Dernier(Liste L) {
   while (!EstVide(GetSucc(L))) {
