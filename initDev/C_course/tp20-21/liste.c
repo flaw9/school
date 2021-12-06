@@ -84,7 +84,7 @@ Liste Detruire(Liste L) {
 
 // FONCTIONS VUES EN TD:
 unsigned int Longueur(Liste L) {
-  int n = 0
+  int n = 0;
   while (!EstVide(L)) {
     n++;
     L = GetSucc(L);
