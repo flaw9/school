@@ -49,7 +49,7 @@ int main() {
     // TempsAfficher(t3);
 
     float sec;
-    scanf("%f", sec);
+    scanf("%ld", sec);
 
     temps t4 = TempsCreerSecondes(sec);
     TempsAfficher(t4);
