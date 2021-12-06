@@ -70,8 +70,6 @@ temps TempsValider(temps t)
         t.heures -= 1;
         t.minutes += 60;
     }
-    // float tSec = TempsEnSecondes(t);
-    // return TempsCreerSecondes(tSec);
     return t;
 }
 
