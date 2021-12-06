@@ -119,7 +119,7 @@ Liste Dernier(Liste L) {
 }
 
 Liste Supprimer(Liste L, int r) {
-  if (r = 0 || EstVide(L))
+  if (r == 0 || EstVide(L))
     return Detruire(L);
   
   int i = 0;
@@ -127,17 +127,55 @@ Liste Supprimer(Liste L, int r) {
     L = GetSucc(L);
     i++;
   }
+  SetSucc(L, Detruire(GetSucc(L)));
 }
 
-// Liste Concatener(Liste L1, Liste L2) {}
+Liste Concatener(Liste L1, Liste L2) {
+  if (EstVide(L1)) { return L2; }
+  else if (!EstVide(L2)) {
+    return SetSucc(Dernier(L), L2);
+  }
+  return L1
+}
 
-// Liste Ajouter(Liste L, Element E, int r) {}
+Liste Ajouter(Liste L, Element E, int r) {
+  if (!ElementEstValide(E)) return L;
+  if (r == 0 || EstVide(L)) return Creer(E, L);
 
-// Liste Inverser(Liste L) {}
+  int i = 0;
+  while (!EstVide(GetSucc(L)) && i < r-1) {
+    L = GetSucc(L);
+    i++;
+  }
+  SetSucc(L, Creer(E,GetSucc(L)));
+}
 
-// Liste Copier(Liste L) {}
+Liste Inverser(Liste L) {
+  Liste Linv = liste_vide;
+  while (!EstVide(L)) {
+    Linv = Creer(GetContenu(L), Linv);
+    L = GetSucc(L);
+  }
+  return Linv;
+}
 
-// Liste Vider(Liste L) {}
+Liste Copier(Liste L) {
+  Liste Lcopie = Creer(GetContenu(L), liste_vide);
+  L = GetSucc(L);
+  while (!EstVide(L)) {
+    SetSucc(Lcopie, Creer(GetContenu(L), liste_vide));
+    Lcopie = GetSucc(Lcopie);
+    L = GetSucc(L);
+  }
+  return Lcopie;
+}
+
+Liste Vider(Liste L) {
+  while (!EstVide(L)) {
+    L = Detruire(L);
+  }
+  return L;
+}
 
 // EXEMPLE DE MAIN
 int main(int argc, char *argv[]) {
