@@ -83,6 +83,16 @@ temps TempsAjouter(temps t1, temps t2)
     return TempsValider(t);
 }
 
+temps TempsSoustraire(temps t1, temps t2)
+{
+    temps t;
+    t.heures = t1.heures - t2.heures;
+    t.minutes = t1.minutes - t2.minutes;
+    t.secondes = t1.secondes - t2.secondes;
+
+    return TempsValider(t);
+}
+
 int main() {
     // temps t1;
     // t1.heures = 12;
@@ -100,6 +110,9 @@ int main() {
 
     temps t;
     t = TempsAjouter(t3, t4);
+    TempsAfficher(t);
+
+    t = TempsSoustraire(t3, t4);
     TempsAfficher(t);
 
     // float sec;
