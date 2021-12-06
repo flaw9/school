@@ -34,9 +34,22 @@ temps TempsCreerSecondes(float sec)
     return t;
 }
 
-float TempsEnSecondes(temps t)
-{
-    return t.heures * 3600 + t.minutes * 60 + t.secondes;
+float TempsEnSecondes(temps t){return t.heures*3600+t.minutes*60+t.secondes;}
+
+int TempsComparer(temps t1, temps t2){
+    if (t1.heures > t2.heures) { return 1 };
+    else if (t1.heures < t2.heures) { return -1 };
+    else {
+        if (t1.minutes > t2.minutes) { return 1 };
+        else if (t1.minutes < t2.minutes) { return -1 };
+        else {
+            if (t1.secondes > t2.secondes) { return 1 };
+            else if (t1.secondes < t2.secondes) { return -1 };
+            else {
+                return 0;
+            }
+        }
+    }
 }
 
 int main() {
@@ -49,8 +62,8 @@ int main() {
     // temps t2={12,46,38.64};
     // TempsAfficher(t2);
 
-    // temps t3 = TempsCreer(12, 46, 38.64);
-    // TempsAfficher(t3);
+    temps t3 = TempsCreer(12, 46, 38.64);
+    TempsAfficher(t3);
 
     float sec;
     scanf("%f", &sec);
@@ -60,6 +73,8 @@ int main() {
 
     float t4Secondes = TempsEnSecondes(t4);
     printf("Secondes: %f\n", t4Secondes);
+
+    printf("%i", TempsComparer(t3, t4));
 
     return 0;
 }
