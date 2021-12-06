@@ -57,7 +57,7 @@ temps TempsValider(temps t)
     {
         t.minutes += 1;
         t.secondes -= 60;
-    } while (t.secondes < 60)
+    } while (t.secondes < -60)
     {
         t.minutes -= 1;
         t.secondes += 60;
@@ -65,7 +65,7 @@ temps TempsValider(temps t)
     {
         t.heures += 1;
         t.minutes -= 60;
-    } while (t.minutes < 60)
+    } while (t.minutes < -60)
     {
         t.heures -= 1;
         t.minutes += 60;
