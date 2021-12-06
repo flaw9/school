@@ -48,8 +48,7 @@ int main() {
     // temps t3 = TempsCreer(12, 46, 38.64);
     // TempsAfficher(t3);
 
-    float sec;
-    scanf("%ld", sec);
+    float sec = 243;
 
     temps t4 = TempsCreerSecondes(sec);
     TempsAfficher(t4);
