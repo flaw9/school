@@ -27,7 +27,7 @@ temps TempsCreerSecondes(float sec)
     // Fonction qui renvoie une structure temps à partir d'un nombre de secondes passé en paramètre.
 {
     temps t;
-    t.heures = int (sec / 3600);
+    t.heures = sec / 3600;
     t.minutes = (sec - (t.heures * 3600)) / 60;
     t.secondes = sec - (t.heures * 3600 + t.minutes * 60);
 
