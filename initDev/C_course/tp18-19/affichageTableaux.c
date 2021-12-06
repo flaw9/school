@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
 // #define SIZE1 abs(rand() % 10 + 1)
 // #define SIZE2 abs(rand() % 10 + 1)
