@@ -24,7 +24,7 @@ temps TempsCreer(int Heures, int Minutes, float Secondes)
 }
 
 temps TempsCreerSecondes(float sec)
-"""Fonction qui renvoie une structure temps à partir d'un nombre de secondes passé en paramètre."""
+    """Fonction qui renvoie une structure temps à partir d'un nombre de secondes passé en paramètre."""
 {
     temps t;
     t.heures = sec / 3600;
