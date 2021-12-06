@@ -58,5 +58,8 @@ int main() {
     temps t4 = TempsCreerSecondes(sec);
     TempsAfficher(t4);
 
+    float t4Secondes = TempsEnSecondes(t4);
+    printf("Secondes: %f", t4Secondes);
+
     return 0;
 }
