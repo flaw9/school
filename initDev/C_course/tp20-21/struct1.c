@@ -10,7 +10,7 @@ typedef struct temps temps;
 
 void TempsAfficher(temps t)
 {
-    printf("Il est %d heures, %d minutes et %f secondes.\”", t.heures, t.minutes, t.secondes);
+    printf("Il est %d heures, %d minutes et %f secondes.\n", t.heures, t.minutes, t.secondes);
 }
 
 temps TempsCreer(int Heures, int Minutes, float Secondes)
