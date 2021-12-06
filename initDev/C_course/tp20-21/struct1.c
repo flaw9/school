@@ -26,7 +26,6 @@ temps TempsCreer(int Heures, int Minutes, float Secondes)
 temps TempsCreerSecondes(float sec)
     // Fonction qui renvoie une structure temps à partir d'un nombre de secondes passé en paramètre.
 {
-    printf("%f", sec);
     temps t;
     t.heures = sec / 3600;
     t.minutes = (sec - (t.heures * 3600)) / 60;
