@@ -53,19 +53,21 @@ int TempsComparer(temps t1, temps t2)
 
 temps TempsValider(temps t)
 {
-    while (t.secondes > 60)
+    // int h, int m, int s;
+    
+    while (t.secondes > 60) do
     {
         t.minutes += 1;
         t.secondes -= 60;
-    } while (t.secondes < 0)
+    } while (t.secondes < 0) do
     {
         t.minutes -= 1;
         t.secondes += 60;
-    } while (t.minutes > 60)
+    } while (t.minutes > 60) do
     {
         t.heures += 1;
         t.minutes -= 60;
-    } while (t.minutes < 0)
+    } while (t.minutes < 0) do
     {
         t.heures -= 1;
         t.minutes += 60;
