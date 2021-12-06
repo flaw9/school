@@ -90,7 +90,7 @@ int main() {
 
     temps t3 = TempsCreer(-7, 150, -66);
     TempsAfficher(t3);
-    TempsValider(t3);
+    t3 = TempsValider(t3);
     TempsAfficher(t3);
 
     // float sec;
