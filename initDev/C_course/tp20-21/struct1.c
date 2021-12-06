@@ -34,6 +34,11 @@ temps TempsCreerSecondes(float sec)
     return t;
 }
 
+float TempsEnSecondes(temps t)
+{
+    return t.heures * 3600 + t.minutes * 60 + t.secondes;
+}
+
 int main() {
     // temps t1;
     // t1.heures = 12;
