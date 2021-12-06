@@ -53,25 +53,25 @@ int TempsComparer(temps t1, temps t2)
 
 temps TempsValider(temps t)
 {
-    // while (t.secondes > 60)
-    // {
-    //     t.minutes += 1;
-    //     t.secondes -= 60;
-    // } while (t.secondes < 0)
-    // {
-    //     t.minutes -= 1;
-    //     t.secondes += 60;
-    // } while (t.minutes > 60)
-    // {
-    //     t.heures += 1;
-    //     t.minutes -= 60;
-    // } while (t.minutes < 0)
-    // {
-    //     t.heures -= 1;
-    //     t.minutes += 60;
-    // }
-    float tSec = TempsEnSecondes(t);
-    return TempsCreerSecondes(tSec);
+    while (t.secondes > 60)
+    {
+        t.minutes += 1;
+        t.secondes -= 60;
+    } while (t.secondes < 0)
+    {
+        t.minutes -= 1;
+        t.secondes += 60;
+    } while (t.minutes > 60)
+    {
+        t.heures += 1;
+        t.minutes -= 60;
+    } while (t.minutes < 0)
+    {
+        t.heures -= 1;
+        t.minutes += 60;
+    }
+    // float tSec = TempsEnSecondes(t);
+    // return TempsCreerSecondes(tSec);
 }
 
 int main() {
