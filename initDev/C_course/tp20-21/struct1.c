@@ -37,14 +37,14 @@ temps TempsCreerSecondes(float sec)
 float TempsEnSecondes(temps t){return t.heures*3600+t.minutes*60+t.secondes;}
 
 int TempsComparer(temps t1, temps t2){
-    if (t1.heures > t2.heures) { return 1 };
-    else if (t1.heures < t2.heures) { return -1 };
+    if (t1.heures > t2.heures) { return 1; }
+    else if (t1.heures < t2.heures) { return -1; }
     else {
-        if (t1.minutes > t2.minutes) { return 1 };
-        else if (t1.minutes < t2.minutes) { return -1 };
+        if (t1.minutes > t2.minutes) { return 1; }
+        else if (t1.minutes < t2.minutes) { return -1; }
         else {
-            if (t1.secondes > t2.secondes) { return 1 };
-            else if (t1.secondes < t2.secondes) { return -1 };
+            if (t1.secondes > t2.secondes) { return 1; }
+            else if (t1.secondes < t2.secondes) { return -1; }
             else {
                 return 0;
             }
