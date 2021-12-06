@@ -62,8 +62,9 @@ int main() {
     // temps t2={12,46,38.64};
     // TempsAfficher(t2);
 
-    temps t3 = TempsCreer(12, 46, 38.64);
+    temps t3 = TempsCreer(12, 46, 38);
     TempsAfficher(t3);
+    printf("%f\n", TempsEnSecondes(t3))
 
     float sec;
     scanf("%f", &sec);
@@ -74,7 +75,7 @@ int main() {
     float t4Secondes = TempsEnSecondes(t4);
     printf("Secondes: %f\n", t4Secondes);
 
-    printf("%i", TempsComparer(t3, t4));
+    printf("%i\n", TempsComparer(t3, t4));
 
     return 0;
 }
