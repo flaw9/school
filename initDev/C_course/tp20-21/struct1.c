@@ -53,10 +53,10 @@ int TempsComparer(temps t1, temps t2)
 
 temps TempsValider(temps t)
 {
-    while (&t.secondes > 60)
+    while (t.secondes > 60)
     {
         t.minutes += 1;
-        t.secondes -= 60;
+        &t.secondes -= 60;
     } while (t.secondes < 0)
     {
         t.minutes -= 1;
