@@ -9,11 +9,13 @@ struct temps
 typedef struct temps temps;
 
 void TempsAfficher(temps t)
+    // Affiche le temps.
 {
     printf("Il est %d heures, %d minutes et %f secondes.\n", t.heures, t.minutes, t.secondes);
 }
 
 temps TempsCreer(int Heures, int Minutes, float Secondes)
+    // Créé le temps.
 {
     temps t;
     t.heures = Heures;
@@ -34,9 +36,14 @@ temps TempsCreerSecondes(float sec)
     return t;
 }
 
-float TempsEnSecondes(temps t){return t.heures*3600+t.minutes*60+t.secondes;}
+float TempsEnSecondes(temps t)/*Renvoie la valeur en secondes du temps entré en paramètre.*/{return t.heures*3600+t.minutes*60+t.secondes;}
 
 int TempsComparer(temps t1, temps t2)
+    /* Compare le temps t1 et le temps t2 entré en paramètres.
+    - renvoie 1 si t1 est plus long que t2 ;
+    - renvoie 0 si t1 est aussi long que t2 ;
+    - renvoie -1 si t1 est plus court que t2 ;
+    */
 {
     if (t1.heures > t2.heures) { return 1; }
     else if (t1.heures < t2.heures) { return -1; }
@@ -52,6 +59,7 @@ int TempsComparer(temps t1, temps t2)
 }
 
 temps TempsValider(temps t)
+    // Renvoie le temps de manière lisible (minutes < 60, secondes < 60).
 {
     while (t.secondes > 60)
     {
@@ -74,6 +82,7 @@ temps TempsValider(temps t)
 }
 
 temps TempsAjouter(temps t1, temps t2)
+    // Additionne temps t1 et temps t2 et renvoie le résultat.
 {
     temps t;
     t.heures = t1.heures + t2.heures;
@@ -84,6 +93,7 @@ temps TempsAjouter(temps t1, temps t2)
 }
 
 temps TempsSoustraire(temps t1, temps t2)
+    // Soustrait temps t1 et temps t2 et renvoie le résultat.
 {
     temps t;
     t.heures = t1.heures - t2.heures;
@@ -103,17 +113,17 @@ int main() {
     // temps t2={12,46,38.64};
     // TempsAfficher(t2);
 
-    temps t3 = TempsCreer(-2, 37, 3);
-    temps t4 = TempsCreer(-1, 3, 10);
-    TempsAfficher(t3);
-    TempsAfficher(t4);
+    // temps t3 = TempsCreer(-2, 37, 3);
+    // temps t4 = TempsCreer(-1, 3, 10);
+    // TempsAfficher(t3);
+    // TempsAfficher(t4);
 
-    temps t;
-    t = TempsAjouter(t3, t4);
-    TempsAfficher(t);
+    // temps t;
+    // t = TempsAjouter(t3, t4);
+    // TempsAfficher(t);
 
-    t = TempsSoustraire(t3, t4);
-    TempsAfficher(t);
+    // t = TempsSoustraire(t3, t4);
+    // TempsAfficher(t);
 
     // float sec;
     // scanf("%f", &sec);
