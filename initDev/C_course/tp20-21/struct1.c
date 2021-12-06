@@ -75,10 +75,12 @@ temps TempsValider(temps t)
 
 temps TempsAjouter(temps t1, temps t2)
 {
-    t1 = TempsValider(t1);
-    t2 = TempsValider(t2);
+    temps t;
+    t.heures = t1.heures + t2.heures;
+    t.minutes = t1.minutes + t2.minutes;
+    t.secondes = t1.secondes + t2.secondes;
 
-
+    return TempsValider(t);
 }
 
 int main() {
@@ -92,9 +94,13 @@ int main() {
     // TempsAfficher(t2);
 
     temps t3 = TempsCreer(-12, 577, 3);
+    temps t4 = TempsCreer(-1, 3, 10);
     TempsAfficher(t3);
-    t3 = TempsValider(t3);
-    TempsAfficher(t3);
+    TempsAfficher(t4);
+
+    temps t;
+    t = TempsAjouter(t3, t4);
+    TempsAfficher(t);
 
     // float sec;
     // scanf("%f", &sec);
