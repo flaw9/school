@@ -91,7 +91,7 @@ int main() {
     // temps t2={12,46,38.64};
     // TempsAfficher(t2);
 
-    temps t3 = TempsCreer(12, -577, 3);
+    temps t3 = TempsCreer(-12, 577, 3);
     TempsAfficher(t3);
     t3 = TempsValider(t3);
     TempsAfficher(t3);
