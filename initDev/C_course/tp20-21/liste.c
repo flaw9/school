@@ -88,6 +88,7 @@ unsigned int Longueur(Liste L) {
   while (!EstVide(L)) {
     n++;
     L = GetSucc(L);
+    // On incrémente le compteur tant que L a un successeur.
   }
   return n;
 }
@@ -99,13 +100,32 @@ void Afficher(Liste L) {
   }
 }
 
-// Liste Rechercher(Liste L, Element E) {}
+Liste Rechercher(Liste L, Element E) {
+  while (!EstVide(L) && !ElementComparer(GetContenu(L), E)) { // On continue de parcourir la liste jusqu'à temps qu'on trouve l'élément E ou qu'on arrive à la fin de la liste.
+    L = GetSucc(L);
+  }
+  return L;
+}
 
-// bool EstDans(Liste L, Element E) { return !(EstVide(Rechercher(L, E))); }
+bool EstDans(Liste L, Element E) {& return !(EstVide(Rechercher(L, E))); }
 
-// Liste Dernier(Liste L) {}
+Liste Dernier(Liste L) {
+  while (!EstVide(GetSucc(L))) {
+    L = GetSucc(L);
+  }
+  return L;
+}
 
-// Liste Supprimer(Liste L, int r) {}
+Liste Supprimer(Liste L, int r) {
+  if (r = 0 || EstVide(L))
+    return Detruire(L);
+  
+  int i = 0;
+  while (!EstVide(GetSucc(L)) && i < r-1) {
+    L = GetSucc(L);
+    i++;
+  }
+}
 
 // Liste Concatener(Liste L1, Liste L2) {}
 
