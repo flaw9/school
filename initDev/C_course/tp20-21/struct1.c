@@ -28,8 +28,8 @@ temps TempsCreerSecondes(float sec)
 {
     temps t;
     t.heures = sec / 3600;
-    t.minutes = (sec % 3600) / 60;
-    t.secondes = (sec % 3600) % 60;
+    t.minutes = (int sec % 3600) / 60;
+    t.secondes = sec - (t.heures * 3600 + t.minutes * 60);
 
     return t;
 }
