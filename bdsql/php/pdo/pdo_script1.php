@@ -10,12 +10,17 @@ $dbname = "bd_vol_pil1";
 // mysqli, uniquement pour MySQL
 $mysqli = new mysqli('localhost', 'root', '', $dbname);
 $result = $mysqli->query('SELECT * FROM pilote');
-$row = $result->fetch_assoc();
-echo htmlentities ($row['nompil']), '<br />';
+
+while ($row = $result->fetch_assoc())  {
+    echo htmlentities ($row['nompil']), '<br />';
+}
 
 // PDO, pour MySQL mais aussi pour PosgresSQL, Sqlite, Oracle, ...
-// $pdo = new PDO(`mysql: host=localhost; dbname=$dbname`, 'root', '');
-// $statement = $pdo->query('SELECT * FROM pilote');
-// $row = $statement->fetch(PDO::FETCH_ASSOC);
-// echo htmlentities ($row['nompil']), '<br />';
-// ?>
+$user = 'root'; $pass = '';
+$pdo = new PDO("mysql: host=localhost; dbname={$dbname}", $user, $pass);
+$statement = $pdo->query('SELECT * FROM pilote');
+
+while ($row = $statement->fetch(PDO::FETCH_ASSOC))  {
+    echo htmlentities ($row['numpil']), '<br />';
+}
+?>
