@@ -80,11 +80,11 @@ int main()
             }
         }
         else if (result == 2) {
-            int value;
+            int valeur;
             printf("Entrez la valeur à empiler: ");
-            scanf("%d", value);
-            empiler(p, value);
-            printf("Valeur %i ajoutée à la pile.", value);
+            scanf("%d", &valeur);
+            empiler(p, valeur);
+            printf("Valeur %d ajoutée à la pile.", valeur);
         }
     }
     // PILE p; p.sommet = -1; p.TAILLEMAX = 5;
