@@ -56,9 +56,9 @@ int mainP(int estCree)
     printf("2: Empiler une valeur\n");
     printf("3: Dépiler une valeur\n");
     printf("4: Afficher état.\n");
+    }
     printf("0: Quitter.\n");
     printf("-----\n");
-    }
     int request;
     scanf("%i", &request);
     return request;
