@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 struct pile {
     int TAILLEMAX;
@@ -39,9 +40,39 @@ void empiler(PILE p, int elt)
     }
 }
 
+int sommet(PILE p)
+{
+    return p.pile[p.sommet];
+}
+
+/* Menu avec différentes options */
+void mainP(int estCree)
+{
+    printf("-----\n");
+    estCree == 1 ? printf("1: Créer une pile\n") : printf("La pile existe déjà !");
+    if (estCree == 0) {
+        printf("La pile doit d'abord être crée !\n")
+    } else {
+    printf("2: Empiler une valeur\n");
+    printf("3: Dépiler une valeur\n");
+    printf("4: Afficher état.\n");
+    printf("0: Quitter.\n");
+    printf("-----\n");
+    int request;
+    scanf("%i", &request);
+    return request;
+    }
+}
+
+
 int main()
 {
 
-    PILE p; p.sommet = -1; p.TAILLEMAX = 5;
+    int result = -1;
+    while (result != 0) {
+        result = mainP;
+        printf("%i", result);
+    }
+    // PILE p; p.sommet = -1; p.TAILLEMAX = 5;
     return 0;
 }
