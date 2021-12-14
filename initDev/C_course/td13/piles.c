@@ -87,7 +87,7 @@ int main()
             printf("La valeur %d ajoutée à la pile.\n", valeur);
         } else if (result == 3) {
             depiler(p);
-            printf("Une valeur à été retiré de la pile.\n", valeur);
+            printf("Une valeur à été retiré de la pile.\n");
 
         }
     }
