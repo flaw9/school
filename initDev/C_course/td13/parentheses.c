@@ -44,7 +44,7 @@ int main()
         if (ch == '(') {
             empiler(&p, 1);
         } else if(ch == ')') {
-            depiler(&p) == -1 ? printf("Plus aucune parenthèse à fermer !\n") : NULL;
+            (depiler(&p) == -1) ? printf("Plus aucune parenthèse à fermer !\n") : NULL;
         }
     } while (ch != '\n');
     (pileVide(p)) ? printf("La syntaxe est correcte !\n") : printf("Il y a %i parenthèses incorrectes.");
