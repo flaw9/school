@@ -14,6 +14,12 @@ int pileVide(PILE p)
     return p.sommet == -1 ? 1 : 0;
 }
 
+/* Renvoie 1 si la pile est pleine, sinon 0. */
+int pilePleine(PILE p)
+{
+    return (p.sommet == TAILLEMAX-1) ? 1 : 0;
+}
+
 /* Si la pile n'est pas vide, renvoie le dernier élément et décrémente le sommet. */
 int depiler(PILE *p)
 {
@@ -28,10 +34,15 @@ int depiler(PILE *p)
 }
 
 /* Si la pile n'est pas pleine, incrémente le sommet et ajoute l'élément à la pile. */
-void empiler(PILE *p, int elt)
+int empiler(PILE *p, int elt)
 {
-    p->sommet += 1;
-    p->pile[p->sommet] = elt;
+    if(pilePleine(*p) == 0) {
+        p->sommet += 1;
+        p->pile[p->sommet] = elt;
+        return 1;
+    } else {
+        return 0;
+    }
 }
 
 void checkSyntax(char *str) {
