@@ -96,7 +96,7 @@ int main()
         } else if (result == 3) {
             depiler(&p) == 1 ? printf("Une valeur a été retirée de la pile.\n") : printf("La pile est vide !\n");
         } else if (result == 4) {
-            afficherPile(*p);
+            afficherPile(&p);
         }
     }
     // PILE p; p.sommet = -1; p.TAILLEMAX = 5;
