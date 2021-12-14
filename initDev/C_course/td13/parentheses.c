@@ -2,8 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 
+#define TAILLEMAX 50
+
 struct pile {
-    int pile[50];
+    int pile[TAILLEMAX];
     int sommet;
 };
 typedef struct pile PILE;
