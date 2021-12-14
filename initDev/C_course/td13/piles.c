@@ -59,7 +59,7 @@ void afficherEtat(PILE *p) {
         printf("%d : %d\n", i+1, p->pile[i]);
     }
     (pilePleine(*p) == 0) ? ((pileVide(*p) == 0) ? printf("La pile n'est ni vide ni pleine !\n") : printf("La pile est vide !\n")) : printf("La pile est pleine !\n");
-    printf("Indice du sommet: %d\n", p->sommet);
+    printf("Indice du sommet: %d\n", p->sommet+1);
     
     printf("\n");
 }
