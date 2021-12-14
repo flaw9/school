@@ -50,12 +50,14 @@ int sommet(PILE *p)
 }
 
 void afficherEtat(PILE *p) {
+    printf("\n");
     printf("*État de la pile*\nContenu de la pile: \n");
     for(int i = TAILLEMAX-1; i > 0; i--) {
         printf("%d : %d\n", i+1, p->pile[i]);
     }
     (pilePleine(p) == 0) ? printf("La pile n'est pas pleine !\n") : printf("La pile est pleine !\n");
     (pileVide(p) == 0) ? printf("La pile n'est pas vide !\n") : printf("La pile est vide !\n");
+    printf("\n");
 }
 
 /* Menu avec différentes options */
