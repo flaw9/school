@@ -49,7 +49,7 @@ int sommet(PILE p)
 int mainP(int estCree)
 {
     printf("-----\n");
-    estCree == 0 ? printf("1: Créer une pile\n") : printf("La pile existe déjà !");
+    estCree == 0 ? printf("1: Créer une pile\n") : printf("La pile existe déjà !\n");
     if (estCree == 0) {
         printf("La pile doit d'abord être crée !\n");
     } else {
@@ -70,7 +70,7 @@ int main()
 
     int result = -1;
     while (result != 0) {
-        result = mainP(1);
+        result = mainP(0);
         printf("%i", result);
     }
     // PILE p; p.sommet = -1; p.TAILLEMAX = 5;
