@@ -51,7 +51,7 @@ void mainP(int estCree)
     printf("-----\n");
     estCree == 1 ? printf("1: Créer une pile\n") : printf("La pile existe déjà !");
     if (estCree == 0) {
-        printf("La pile doit d'abord être crée !\n")
+        printf("La pile doit d'abord être crée !\n");
     } else {
     printf("2: Empiler une valeur\n");
     printf("3: Dépiler une valeur\n");
