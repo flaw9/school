@@ -96,15 +96,19 @@ int main()
                 p.sommet = -1;
                 existe = 1;
             }
-        } else if (result == 2) {
-            int valeur;
-            printf("Entrez la valeur à empiler: ");
-            scanf("%d", &valeur);
-            empiler(&p, valeur) == 1 ? printf("La valeur %d ajoutée à la pile.\n", valeur) : printf("La pile est pleine !\n");
-        } else if (result == 3) {
-            depiler(&p) != -1 ? printf("Une valeur a été retirée de la pile.\n") : printf("La pile est vide !\n");
-        } else if (result == 4) {
-            afficherEtat(&p);
+        } else {
+            switch(result) {
+                case 2:
+                    int valeur;
+                    printf("Entrez la valeur à empiler: ");
+                    scanf("%d", &valeur);
+                    empiler(&p, valeur) == 1 ? printf("La valeur %d ajoutée à la pile.\n", valeur) : printf("La pile est pleine !\n");
+                case 3:
+                    depiler(&p) != -1 ? printf("Une valeur a été retirée de la pile.\n") : printf("La pile est vide !\n");
+
+                case 4:
+                    afficherEtat(&p);
+            }
         }
     }
     // PILE p; p.sommet = -1; p.TAILLEMAX = 5;
