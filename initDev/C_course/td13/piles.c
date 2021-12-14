@@ -86,7 +86,7 @@ int main()
             scanf("%d", &valeur);
             printf("%d\n", valeur);
             empiler(p, valeur);
-            printf("Valeur %d ajoutée à la pile.", valeur);
+            printf("La valeur %d ajoutée à la pile.\n", valeur);
         }
     }
     // PILE p; p.sommet = -1; p.TAILLEMAX = 5;
