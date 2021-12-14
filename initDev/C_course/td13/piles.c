@@ -58,10 +58,10 @@ int mainP(int estCree)
     printf("4: Afficher état.\n");
     printf("0: Quitter.\n");
     printf("-----\n");
+    }
     int request;
     scanf("%i", &request);
     return request;
-    }
 }
 
 
