@@ -40,8 +40,11 @@ int main()
     // PILE p; p.sommet = -1; p.TAILLEMAX = 5;
     do {
         ch = getchar();
-        if(ch == '(') empiler(p, 1);
-        else if(ch == ')') depiler(p) == -1 ? printf("Plus aucune parenthèse à fermer !\n") : NULL;
+        if (ch == '(') {
+            empiler(p, 1);
+        } else if(ch == ')') {
+            depiler(p) == -1 ? printf("Plus aucune parenthèse à fermer !\n") : NULL;
+        }
     } while (ch != '\n');
     (pileVide(p)) ? printf("La syntaxe est correcte !\n") : printf("Il y a %i parenthèses incorrectes.");
     return 0;
