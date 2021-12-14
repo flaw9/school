@@ -83,7 +83,7 @@ int main()
         }
         else if (result == 2) {
             int value;
-            scanf("%i", &value);
+            scanf("%d", &value);
             empiler(p, value);
             printf("Valeur %i ajoutée à la pile.", value);
         }
