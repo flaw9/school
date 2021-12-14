@@ -34,22 +34,41 @@ void empiler(PILE *p, int elt)
     p->pile[p->sommet] = elt;
 }
 
-int main()
-{
+void checkSyntax(char *str) {
     char ch;
     PILE p;
     p.sommet = -1;
-    do {
-        ch = getchar();
+    for(int i = 0; i < strlen(str); i++) {
+        ch = str[i];
         if (ch == '(') {
             empiler(&p, 1);
         } else if(ch == ')') {
             if (depiler(&p) == -1){
-                printf("Plus aucune parenthèse à fermer !\n");
-                return 0;
+                printf("Incorrect !\n");
             }
         }
-    } while (ch != '\n');
-    (pileVide(p)) ? printf("La syntaxe est correcte !\n") : printf("Il y a %i parenthèses encore ouverte(s).");
+    }
+    (pileVide(p)) ? printf("Correct !\n") : printf("Incorrect !\n");
+}
+
+
+int main()
+{
+    // char ch;
+    // PILE p;
+    // p.sommet = -1;
+    // do {
+    //     ch = getchar();
+    //     if (ch == '(') {
+    //         empiler(&p, 1);
+    //     } else if(ch == ')') {
+    //         if (depiler(&p) == -1){
+    //             printf("Incorrect !\n");
+    //             return 0;
+    //         }
+    //     }
+    // } while (ch != '\n');
+    // (pileVide(p)) ? printf("Correct !\n") : printf("Incorrect !\n");
+    checkSyntax("(((()()))()");
     return 0;
 }
