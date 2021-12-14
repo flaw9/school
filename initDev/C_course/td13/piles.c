@@ -31,7 +31,7 @@ int depiler(PILE *p)
         return value;
     }
     else {
-        return -1
+        return -1;
     }
 }
 
