@@ -83,6 +83,7 @@ int main()
             int valeur;
             printf("Entrez la valeur à empiler: ");
             scanf("%d", &valeur);
+            printf("%d", valeur);
             empiler(p, valeur);
             printf("Valeur %d ajoutée à la pile.", valeur);
         }
