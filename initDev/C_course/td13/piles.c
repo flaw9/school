@@ -33,11 +33,14 @@ int depiler(PILE p)
 }
 
 /* Si la pile n'est pas pleine, incrémente le sommet et ajoute l'élément à la pile. */
-void empiler(PILE p, int elt)
+int empiler(PILE p, int elt)
 {
     if(!pilePleine(p) == 0) {
         p.sommet += 1;
         p.pile[p.sommet] = elt;
+        return 1;
+    } else {
+        return 0
     }
 }
 
@@ -83,8 +86,7 @@ int main()
             int valeur;
             printf("Entrez la valeur à empiler: ");
             scanf("%d", &valeur);
-            empiler(p, valeur);
-            printf("La valeur %d ajoutée à la pile.\n", valeur);
+            empiler(p, valeur) == 1 ? printf("La valeur %d ajoutée à la pile.\n", valeur) : printf("La pile est pleine !\n");
         } else if (result == 3) {
             depiler(p);
             printf("Une valeur à été retiré de la pile.\n");
