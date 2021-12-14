@@ -28,15 +28,10 @@ int depiler(PILE *p)
 }
 
 /* Si la pile n'est pas pleine, incrémente le sommet et ajoute l'élément à la pile. */
-int empiler(PILE *p, int elt)
+void empiler(PILE *p, int elt)
 {
-    if(pilePleine(*p) == 0) {
-        p->sommet += 1;
-        p->pile[p->sommet] = elt;
-        return 1;
-    } else {
-        return 0;
-    }
+    p->sommet += 1;
+    p->pile[p->sommet] = elt;
 }
 
 int main()
