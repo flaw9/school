@@ -72,7 +72,7 @@ int main()
     int existe = 0;
     int result = -1;
     while (result != 0) {
-        result = existe == 1 ? mainP(0) : mainP(1);
+        result = (existe == 1) ? mainP(1) : mainP(0);
         if (result == 1) {
             if (existe == 0) {
                 p.sommet = -1;
