@@ -25,7 +25,7 @@ int pilePleine(PILE p)
 /* Si la pile n'est pas vide, renvoie le dernier élément et décrémente le sommet. */
 int depiler(PILE *p)
 {
-    if (pileVide(&p) == 0) {
+    if (pileVide(*p) == 0) {
         int value = p->pile[p->sommet];
         p->sommet -= 1;
         return value;
@@ -38,7 +38,7 @@ int depiler(PILE *p)
 /* Si la pile n'est pas pleine, incrémente le sommet et ajoute l'élément à la pile. */
 int empiler(PILE *p, int elt)
 {
-    if(pilePleine(&p) == 0) {
+    if(pilePleine(*p) == 0) {
         p->sommet += 1;
         p->pile[p->sommet] = elt;
         return 1;
