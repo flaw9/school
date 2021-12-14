@@ -49,6 +49,12 @@ int sommet(PILE *p)
     return p->pile[p->sommet];
 }
 
+void afficherPile(PILE *p) {
+    for(int i = 0; i < TAILLEMAX; i++) {
+        printf("%d : %d\n", i, p->pile[i]);
+    }
+}
+
 /* Menu avec différentes options */
 int mainP(int estCree)
 {
@@ -88,9 +94,9 @@ int main()
             scanf("%d", &valeur);
             empiler(&p, valeur) == 1 ? printf("La valeur %d ajoutée à la pile.\n", valeur) : printf("La pile est pleine !\n");
         } else if (result == 3) {
-            depiler(&p);
-            printf("Une valeur à été retiré de la pile.\n");
-
+            depiler(&p) == 1 ? printf("Une valeur a été retirée de la pile.\n") : printf("La pile est vide !\n");
+        } else if (result == 4) {
+            afficherPile(*p);
         }
     }
     // PILE p; p.sommet = -1; p.TAILLEMAX = 5;
