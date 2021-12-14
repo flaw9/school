@@ -77,6 +77,7 @@ int main()
             if (result == 1) {
                 p.sommet = -1;
                 existe = 1;
+            }
         }
         else if (result == 2) {
             int value;
