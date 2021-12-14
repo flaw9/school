@@ -44,7 +44,7 @@ int empiler(PILE *p, int elt)
     }
 }
 
-int sommet(PILE p)
+int sommet(PILE *p)
 {
     return p->pile[p->sommet];
 }
