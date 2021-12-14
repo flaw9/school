@@ -79,14 +79,16 @@ int main()
                 p.sommet = -1;
                 existe = 1;
             }
-        }
-        else if (result == 2) {
+        } else if (result == 2) {
             int valeur;
             printf("Entrez la valeur à empiler: ");
             scanf("%d", &valeur);
-            printf("%d\n", valeur);
             empiler(p, valeur);
             printf("La valeur %d ajoutée à la pile.\n", valeur);
+        } else if (result == 3) {
+            depiler(p);
+            printf("Une valeur à été retiré de la pile.\n", valeur);
+
         }
     }
     // PILE p; p.sommet = -1; p.TAILLEMAX = 5;
