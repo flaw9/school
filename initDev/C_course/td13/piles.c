@@ -19,7 +19,7 @@ int pileVide(PILE *p)
 /* Renvoie 1 si la pile est pleine, sinon 0. */
 int pilePleine(PILE *p)
 {
-    return (p->sommet == TAILLEMAX) ? 1 : 0;
+    return (p->sommet == TAILLEMAX-1) ? 1 : 0;
 } 
 
 /* Si la pile n'est pas vide, renvoie le dernier élément et décrémente le sommet. */
