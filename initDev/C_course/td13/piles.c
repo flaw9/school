@@ -70,7 +70,7 @@ int main()
 
     int result = -1;
     while (result != 0) {
-        result = mainP;
+        result = mainP();
         printf("%i", result);
     }
     // PILE p; p.sommet = -1; p.TAILLEMAX = 5;
