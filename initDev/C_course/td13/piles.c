@@ -3,7 +3,7 @@
 
 struct pile {
     int TAILLEMAX;
-    int pile[pile.TAILLEMAX];
+    int pile[];
     int sommet;
 };
 typedef struct pile PILE;
