@@ -68,10 +68,24 @@ int mainP(int estCree)
 int main()
 {
 
+    PILE p;
+    int existe = 0;
     int result = -1;
     while (result != 0) {
-        result = mainP(0);
-        printf("%i", result);
+        result = existe == 1 ? mainP(0) : mainP(1);
+        if (result == 1) {
+            if (existe == 0) {
+                p.sommet = -1;
+                existe = 1;
+            } else {
+                printf("La pile existe déjà !\n");
+            }
+        }
+        else if (result == 2) {
+            int value;
+            scanf("%i", &value);
+            empiler(p, value);
+        }
     }
     // PILE p; p.sommet = -1; p.TAILLEMAX = 5;
     return 0;
