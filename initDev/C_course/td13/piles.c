@@ -49,10 +49,13 @@ int sommet(PILE *p)
     return p->pile[p->sommet];
 }
 
-void afficherPile(PILE *p) {
-    for(int i = 0; i < TAILLEMAX; i++) {
-        printf("%d : %d\n", i, p->pile[i]);
+void afficherEtat(PILE *p) {
+    printf("*État de la pile*\nContenu de la pile: \n");
+    for(int i = TAILLEMAX-1; i > 0; i--) {
+        printf("%d : %d\n", i+1, p->pile[i]);
     }
+    (pilePleine(p) == 0) ? printf("La pile n'est pas pleine !\n") : printf("La pile est pleine !\n");
+    (pileVide(p) == 0) ? printf("La pile n'est pas vide !\n") : printf("La pile est vide !\n");
 }
 
 /* Menu avec différentes options */
@@ -96,7 +99,7 @@ int main()
         } else if (result == 3) {
             depiler(&p) == 1 ? printf("Une valeur a été retirée de la pile.\n") : printf("La pile est vide !\n");
         } else if (result == 4) {
-            afficherPile(&p);
+            afficherEtat(&p);
         }
     }
     // PILE p; p.sommet = -1; p.TAILLEMAX = 5;
