@@ -40,7 +40,7 @@ int empiler(PILE p, int elt)
         p.pile[p.sommet] = elt;
         return 1;
     } else {
-        return 0
+        return 0;
     }
 }
 
