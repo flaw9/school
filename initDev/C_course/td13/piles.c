@@ -35,8 +35,8 @@ int depiler(PILE p)
 void empiler(PILE p, int elt)
 {
     if(!pilePleine(p)) {
-        p.sommet += 1;
-        p.pile[p.sommet] = elt;
+        &p.sommet += 1;
+        &p.pile[&p.sommet] = elt;
     }
 }
 
