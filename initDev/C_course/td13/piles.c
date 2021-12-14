@@ -7,7 +7,6 @@ struct pile {
     int sommet;
 };
 typedef struct pile PILE;
-PILE p; p->sommet = -1; p->TAILLEMAX = 5;
 
 /* Renvoie 1 si la pile est vide, sinon 0. */
 int pileVide(PILE p)
@@ -43,5 +42,6 @@ void empiler(PILE p, int elt)
 int main()
 {
 
+    PILE p; p->sommet = -1; p->TAILLEMAX = 5;
     return 0;
 }
