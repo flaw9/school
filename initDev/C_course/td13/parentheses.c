@@ -3,7 +3,7 @@
 #include <string.h>
 
 struct pile {
-    int pile[];
+    int *pile;
     int sommet;
 };
 typedef struct pile PILE;
