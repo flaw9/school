@@ -37,7 +37,7 @@ void empiler(PILE *p, int elt)
 int main()
 {
     char ch;
-    // PILE p; p.sommet = -1; p.TAILLEMAX = 5;
+    PILE p; p.sommet = -1;
     do {
         ch = getchar();
         if (ch == '(') {
