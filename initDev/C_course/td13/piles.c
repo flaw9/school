@@ -2,12 +2,12 @@
 #include <stdlib.h>
 
 struct pile {
-    int TAILLEMAX = 5;
+    int TAILLEMAX;
     int pile[TAILLEMAX];
-    int sommet = -1;
+    int sommet;
 };
 typedef struct pile PILE;
-PILE p;
+PILE p; p.sommet = -1; p.TAILLEMAX = 5;
 
 /* Renvoie 1 si la pile est vide, sinon 0. */
 int pileVide(PILE p)
