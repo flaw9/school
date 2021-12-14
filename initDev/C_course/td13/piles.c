@@ -73,13 +73,10 @@ int main()
     int result = -1;
     while (result != 0) {
         result = (existe == 1) ? mainP(1) : mainP(0);
-        if (result == 1) {
-            if (existe == 0) {
+        if (existe == 0) {
+            if (result == 1) {
                 p.sommet = -1;
                 existe = 1;
-            } else {
-                printf("La pile existe déjà !\n");
-            }
         }
         else if (result == 2) {
             int value;
