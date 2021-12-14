@@ -50,6 +50,6 @@ int main()
             }
         }
     } while (ch != '\n');
-    (pileVide(p)) ? printf("La syntaxe est correcte !\n") : printf("Il y a %i parenthèses incorrectes.");
+    (pileVide(p)) ? printf("La syntaxe est correcte !\n") : printf("Il y a %i parenthèses encore ouverte(s).");
     return 0;
 }
