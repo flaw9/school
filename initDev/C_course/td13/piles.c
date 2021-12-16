@@ -72,9 +72,9 @@ int mainP(int estCree)
     if (estCree == 0) {
         printf("La pile doit d'abord être crée !\n");
     } else {
-    printf("2: Empiler une valeur\n");
-    printf("3: Dépiler une valeur\n");
-    printf("4: Afficher état.\n");
+        printf("2: Empiler une valeur\n");
+        printf("3: Dépiler une valeur\n");
+        printf("4: Afficher état.\n");
     }
     printf("0: Quitter.\n");
     printf("-----\n");
