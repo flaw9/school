@@ -11,13 +11,13 @@ struct pile {
 typedef struct pile PILE;
 
 /* Renvoie 1 si la pile est vide, sinon 0. */
-int pileVide(PILE p)
+int pileVide(PILE *p)
 {
     return p.sommet == -1 ? 1 : 0;
 }
 
 /* Renvoie 1 si la pile est pleine, sinon 0. */
-int pilePleine(PILE p)
+int pilePleine(PILE *p)
 {
     return (p.sommet == TAILLEMAX-1) ? 1 : 0;
 } 
