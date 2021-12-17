@@ -95,14 +95,14 @@ void factPile(int n) {
     PILE p;
     p.sommet = -1;
     while (n > 0) {
-        empiler(p, n);
+        empiler(&p, n);
         n -= 1;
     }
     afficherEtat(p);
 
     int r = 1;
     while (!pileVide(p)) {
-        r = r*depiler(p);
+        r = r*depiler(&p);
     }
 
     printf("factPile(%d) = %d", n, r);
