@@ -106,13 +106,16 @@ int main()
                     scanf("%d", &valeur);
                     empiler(&p, valeur) == 1 ? printf("La valeur %d ajoutée à la pile.\n", valeur) : printf("La pile est pleine !\n");
                     getchar();
+                    getchar();
                     break;
                 case 3:
                     depiler(&p) != -1 ? printf("Une valeur a été retirée de la pile.\n") : printf("La pile est vide !\n");
                     getchar();
+                    getchar();
                     break;
                 case 4:
                     afficherEtat(p);
+                    getchar();
                     getchar();
                     break;
             }
