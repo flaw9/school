@@ -26,8 +26,8 @@ int pilePleine(PILE p)
 int depiler(PILE *p)
 {
     if (pileVide(*p) == 0) {
-        int value = p.pile[p.sommet];
-        p.sommet -= 1;
+        int value = p->pile[p->sommet];
+        p->sommet -= 1;
         return value;
     }
     else {
@@ -39,8 +39,8 @@ int depiler(PILE *p)
 int empiler(PILE *p, int elt)
 {
     if(pilePleine(*p) == 0) {
-        p.sommet += 1;
-        p.pile[p.sommet] = elt;
+        p->sommet += 1;
+        p->pile[p->sommet] = elt;
         return 1;
     } else {
         return 0;
