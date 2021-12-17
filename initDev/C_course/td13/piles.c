@@ -67,6 +67,7 @@ void afficherEtat(PILE p) {
 /* Menu avec différentes options */
 int mainP(int estCree)
 {
+    system("clear");
     printf("-----\n");
     estCree == 0 ? printf("1: Créer une pile\n\n") : printf("La pile existe déjà !\n\n");
     if (estCree == 0) {
