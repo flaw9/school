@@ -11,19 +11,19 @@ struct pile {
 typedef struct pile PILE;
 
 /* Renvoie 1 si la pile est vide, sinon 0. */
-int pileVide(PILE p)
+int pileVide(PILE *p)
 {
     return p.sommet == -1 ? 1 : 0;
 }
 
 /* Renvoie 1 si la pile est pleine, sinon 0. */
-int pilePleine(PILE p)
+int pilePleine(PILE *p)
 {
     return (p.sommet == TAILLEMAX-1) ? 1 : 0;
 } 
 
 /* Si la pile n'est pas vide, renvoie le dernier élément et décrémente le sommet. */
-int depiler(PILE *p)
+int depiler(PILE p)
 {
     if (pileVide(p) == 0) {
         int value = p.pile[p.sommet];
