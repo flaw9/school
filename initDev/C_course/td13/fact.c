@@ -98,7 +98,7 @@ void factPile(int n) {
         empiler(p, n);
         n -= 1;
     }
-    afficherEtat(p)
+    afficherEtat(p);
 
     int r = 1;
     while (!pileVide(p)) {
