@@ -25,9 +25,9 @@ int pilePleine(PILE p)
 /* Si la pile n'est pas vide, renvoie le dernier élément et décrémente le sommet. */
 int depiler(PILE *p)
 {
-    if (pileVide(*p) == 0) {
-        int value = p->pile[p->sommet];
-        p->sommet -= 1;
+    if (pileVide(p) == 0) {
+        int value = p.pile[p.sommet];
+        p.sommet -= 1;
         return value;
     }
     else {
@@ -36,11 +36,11 @@ int depiler(PILE *p)
 }
 
 /* Si la pile n'est pas pleine, incrémente le sommet et ajoute l'élément à la pile. */
-int empiler(PILE *p, int elt)
+int empiler(PILE p, int elt)
 {
-    if(pilePleine(*p) == 0) {
-        p->sommet += 1;
-        p->pile[p->sommet] = elt;
+    if(pilePleine(p) == 0) {
+        p.sommet += 1;
+        p.pile[p.sommet] = elt;
         return 1;
     } else {
         return 0;
@@ -52,14 +52,14 @@ int sommet(PILE p)
     return p.pile[p.sommet];
 }
 
-void afficherEtat(PILE *p) {
+void afficherEtat(PILE p) {
     printf("\n");
     printf("Contenu de la pile: \n");
     for(int i = TAILLEMAX-1; i >= 0; i--) {
-        printf("%d : %d\n", i+1, p->pile[i]);
+        printf("%d : %d\n", i+1, p.pile[i]);
     }
-    (pilePleine(*p) == 0) ? ((pileVide(*p) == 0) ? printf("La pile n'est ni vide ni pleine !\n") : printf("La pile est vide !\n")) : printf("La pile est pleine !\n");
-    printf("Indice du sommet: %d\n", p->sommet+1);
+    (pilePleine(p) == 0) ? ((pileVide(p) == 0) ? printf("La pile n'est ni vide ni pleine !\n") : printf("La pile est vide !\n")) : printf("La pile est pleine !\n");
+    printf("Indice du sommet: %d\n", p.sommet+1);
     
     printf("\n");
 }
@@ -109,7 +109,7 @@ int main()
                     depiler(&p) != -1 ? printf("Une valeur a été retirée de la pile.\n") : printf("La pile est vide !\n");
                     break;
                 case 4:
-                    afficherEtat(&p);
+                    afficherEtat(p);
                     break;
             }
         }
