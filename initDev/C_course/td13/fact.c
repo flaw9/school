@@ -94,7 +94,7 @@ long int fact(int n) {
 int main()
 {
 
-    printf("Factorielle(5) = %d",fact(5));
+    printf("Factorielle(5) = %d\n",fact(5));
 
     // PILE p;
     // int valeur;
