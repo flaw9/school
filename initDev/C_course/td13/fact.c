@@ -91,15 +91,33 @@ long int fact(int n) {
         return 1;
 }
 
+void factPile(int n) {
+    PILE p;
+    p->sommet = -1;
+    while (n > 0) {
+        empiler(p, n);
+        n -= 1;
+    }
+    afficherEtat(p)
+
+    int r = 1;
+    while (!pileVide(p)) {
+        r = r*depiler(p);
+    }
+
+    printf("factPile(%d) = %d", n, r);
+}
+
 int main()
 {
 
     printf("Factorielle(5) = %d\n",fact(5));
 
-    // PILE p;
-    // int valeur;
-    // printf("Entrez la valeur à empiler: ");
-    // scanf("%d", &valeur);
+    int valeur;
+    printf("Entrez la valeur à empiler: ");
+    scanf("%d", &valeur);
+
+    factPile(valeur);
 
     return 0;
 }
