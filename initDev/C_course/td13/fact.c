@@ -64,26 +64,6 @@ void afficherEtat(PILE p) {
     printf("\n");
 }
 
-/* Menu avec différentes options */
-int mainP(int estCree)
-{
-    system("clear");
-    printf("-----\n");
-    estCree == 0 ? printf("1: Créer une pile\n\n") : printf("La pile existe déjà !\n\n");
-    if (estCree == 0) {
-        printf("La pile doit d'abord être crée !\n");
-    } else {
-        printf("2: Empiler une valeur\n");
-        printf("3: Dépiler une valeur\n");
-        printf("4: Afficher état.\n");
-    }
-    printf("0: Quitter.\n");
-    printf("-----\n");
-    int request;
-    scanf("%i", &request);
-    return request;
-}
-
 long int fact(int n) {
     if (n>=1)
         return n*fact(n-1);
@@ -113,11 +93,9 @@ void factPile(int n) {
 int main()
 {
 
-    printf("Factorielle(5) = %d\n",fact(5));
+    // printf("Factorielle(5) = %d\n",fact(5));
 
-    int valeur;
-    printf("Entrez la valeur à empiler: ");
-    scanf("%d", &valeur);
+    int valeur = TAILLEMAX;
 
     factPile(valeur);
 
