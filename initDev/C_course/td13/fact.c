@@ -93,7 +93,7 @@ long int fact(int n) {
 
 void factPile(int n) {
     PILE p;
-    p->sommet = -1;
+    p.sommet = -1;
     while (n > 0) {
         empiler(p, n);
         n -= 1;
