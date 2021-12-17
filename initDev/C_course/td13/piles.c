@@ -11,13 +11,13 @@ struct pile {
 typedef struct pile PILE;
 
 /* Renvoie 1 si la pile est vide, sinon 0. */
-int pileVide(PILE *p)
+int pileVide(PILE p)
 {
     return p.sommet == -1 ? 1 : 0;
 }
 
 /* Renvoie 1 si la pile est pleine, sinon 0. */
-int pilePleine(PILE *p)
+int pilePleine(PILE p)
 {
     return (p.sommet == TAILLEMAX-1) ? 1 : 0;
 } 
@@ -58,7 +58,7 @@ void afficherEtat(PILE p) {
     for(int i = TAILLEMAX-1; i >= 0; i--) {
         printf("%d : %d\n", i+1, p.pile[i]);
     }
-    (pilePleine(p) == 0) ? ((pileVide(p) == 0) ? printf("La pile n'est ni vide ni pleine !\n") : printf("La pile est vide !\n")) : printf("La pile est pleine !\n");
+    (pilePleine(&p) == 0) ? ((pileVide(&p) == 0) ? printf("La pile n'est ni vide ni pleine !\n") : printf("La pile est vide !\n")) : printf("La pile est pleine !\n");
     printf("Indice du sommet: %d\n", p.sommet+1);
     
     printf("\n");
