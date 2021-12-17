@@ -92,11 +92,13 @@ long int fact(int n) {
 }
 
 void factPile(int n) {
+    int var;
+    var = n;
     PILE p;
     p.sommet = -1;
-    while (n > 0) {
-        empiler(&p, n);
-        n -= 1;
+    while (var > 0) {
+        empiler(&p, var);
+        var -= 1;
     }
     afficherEtat(p);
 
@@ -105,7 +107,7 @@ void factPile(int n) {
         r = r*depiler(&p);
     }
 
-    printf("factPile(%d) = %d", n, r);
+    printf("factPile(%d) = %d\n", n, r);
 }
 
 int main()
