@@ -1,5 +1,3 @@
-// PAS TOUT FINIS , J'AVAIS LA FLEMME 
-
 // déclaration des fonctions externes
 #include <stdio.h>  // nécessaire pour printf
 #include <stdlib.h> // nécessaire pour malloc et free
@@ -22,6 +20,7 @@
 struct Cellule {
   Element data;
   struct Cellule *next;
+  struct Cellule *prec;
 };
 typedef struct Cellule Cellule;
 
@@ -39,7 +38,7 @@ Element GetContenu(Liste L) {
   return L->data;
 }
 
-void SetContenu(Liste L, Element E) {
+void Ecraser(Liste L, Element E) {
   if (!EstVide(L) && ElementEstValide(E))
     L->data = E;
 }
@@ -50,6 +49,11 @@ Liste GetSucc(Liste L) {
   return L->next;
 }
 
+Liste GetPrec(Liste L) {
+  if (EstVide(L))
+    return liste_vide;
+  return L->prec;
+}
 void SetSucc(Liste L, Liste N) {
   if (!EstVide(L))
     L->next = N;
@@ -62,6 +66,8 @@ Liste Creer(Element E, Liste L) {
   Liste ret = malloc(sizeof(Cellule));
   ret->data = E;
   ret->next = L;
+  ret->prec = liste_vide;
+  if(L != liste_vide) L -> prec = ret;
   return ret;
 }
 
@@ -74,56 +80,135 @@ Liste Detruire(Liste L) {
 }
 
 // FONCTIONS VUES EN TD
-// principe de récursivité :
-// la liste_vide a une longueur nulle
-// la longueur d'une liste non vide est 1 + la longueur de la liste
-// qui débute au successeur
 unsigned int Longueur(Liste L) {
-  return EstVide(L) ? 0 : 1+Longueur(GetSucc(L));
+  Liste tmpL = L;
+  int n = 0;
+  while (EstVide(tmpL) == false) {
+    n++;
+    tmpL = GetSucc(tmpL);
+  }
+  return n;
 }
 
-// principe de récursivité. 
-// Si la liste est vide, on ne fait rien
-// Sinon, on affiche l'élément stocké en tête de liste, et on affiche la suite
 void Afficher(Liste L) {
-  if (!EstVide(L))
-  {
-    ElementAfficher(GetContenu(L));
-    Afficher(GetSucc(L));
+  Liste tmpL = L;
+  while (EstVide(tmpL) == false) {
+    ElementAfficher(GetContenu(tmpL));
+    tmpL = GetSucc(tmpL);
   }
 }
-//principe de récursivité
-// si la liste est vide ou si l'élément stocké en tête de liste est
-// celui recherché, renvoyer la liste courante
-// sinon renvoyé le résultat de la recherche dans la liste débutant
-// au successeur
+
+void AfficherPrec(Liste L) {
+  Liste tmpL = L;
+  while (EstVide(tmpL) == false) {
+    ElementAfficher(GetContenu(tmpL));
+    tmpL = GetPrec(tmpL);
+  }
+}
+
 Liste Rechercher(Liste L, Element E) {
-  return (EstVide(L) || ElementComparer(GetContenu(L), E)) ? L : Rechercher(GetSucc(L),E);
+  Liste tmpL = L;
+  while (EstVide(tmpL) == false &&
+         ElementComparer(GetContenu(tmpL), E) == false)
+    tmpL = GetSucc(tmpL);
+  return tmpL;
 }
 
 bool EstDans(Liste L, Element E) { return !(EstVide(Rechercher(L, E))); }
 
-// principe de récursivité
-// si la liste ou son successeur est vide, renvoyer la liste
-// sinon renvoyer le dernier de la liste débutant au successeur
-// On utilise le fait que GetSucc renvoie la liste vide si la liste ou son 
-// successeur est vide
 Liste Dernier(Liste L) {
-  return EstVide(GetSucc(L)) ? L : Dernier(GetSucc(L));
+  Liste tmpL = L;
+  while (EstVide(GetSucc(tmpL)) == false)
+    tmpL = GetSucc(tmpL);
+  return tmpL;
 }
-// principe de récursivité
-// si la liste est vide, on renvoie liste vide
-// si le rang est 0, on détruit la première cellule et on renvoie la suivante
-// ces deux cas sont traités par un appel à Detruire(L), comme dans la version itérative
-// sinon, on supprime l'élément de rang r-1 dans la liste débutant au successeur
+
+void Echange(Liste L1, Liste L2) {
+  Element data;
+  if(EstVide(L1) || EstVide(L2)) return;
+   data = GetContenu(L1);
+   Ecraser(L1, GetContenu(L2));
+   Ecraser(L2, data);
+}
+
+Liste imin(Liste L) {
+  Liste tmpL = L;
+  Liste tamp = tmpL;
+  while(EstVide(tmpL) == false){ 
+    if(GetContenu(tamp) > GetContenu(tmpL))
+      tamp = tmpL;
+    tmpL = GetSucc(tmpL);
+  }
+  return tamp;
+}                                                                                                                
+
+void TriBulle(Liste L) {
+  Liste tmpL = L;
+  bool tri = false;
+  while(tri == false){
+    tri = true;
+    while(EstVide(tmpL) == false){
+    	if(GetContenu(tmpL) > GetContenu(GetSucc(tmpL))){
+    	  tri = false;
+    	  Echange(tmpL,GetSucc(tmpL));
+    	  }
+    tmpL = GetSucc(tmpL);
+    }
+  }
+}
+
+void TriSelection(Liste L){
+  Liste tmpL = L;
+  while (EstVide(tmpL) == false){
+    Echange(tmpL,imin(L));
+    tmpL = GetSucc(tmpL);
+    }
+}
+
+void TriInsertion(Liste L){
+  Liste tmpL = GetSucc(L);
+  while(EstVide(tmpL) == false){
+    Liste tampL1 = tmpL;
+    while(GetContenu(tampL1) < GetContenu(GetPrec(tampL1))){
+      Echange(tampL1,GetPrec(tampL1));
+      if(EstVide(GetPrec(tampL1))){
+        tampL1 = GetPrec(tampL1);
+      }
+    }
+    tmpL = GetSucc(tmpL);
+  
+  }
+
+}
+  
+Liste creerliste(Liste L){
+  int choix;
+  printf("entrez 0 pour stoper la creation \n");
+  while(GetContenu(L) != 0){
+    printf("inserer un nombre dans la liste \n");
+    scanf("%d", &choix);
+    L = Creer(choix,L);
+  }
+  while(EstVide(L) == false){
+    L = GetPrec(L);
+  }
+  return L;
+}
+
 Liste Supprimer(Liste L, int r) {
   if (r == 0 || EstVide(L))
     return Detruire(L);
-  SetSucc(L,Supprimer(GetSucc(L),r-1));
+
+  int i = 0;
+  Liste tmpL = L;
+  while (EstVide(GetSucc(tmpL)) == false && i < r - 1) {
+    tmpL = GetSucc(tmpL);
+    i++;
+  }
+  SetSucc(tmpL, Detruire(GetSucc(tmpL)));
   return L;
 }
-// ici, pas de boucle, donc pas de récursivité intéressante.
-// On fait appel à Dernier, implémentée de manière récursive
+
 Liste Concatener(Liste L1, Liste L2) {
   if (EstVide(L1))
     return L2;
@@ -132,163 +217,85 @@ Liste Concatener(Liste L1, Liste L2) {
   return L1;
 }
 
-// principe de récursivité.
-// similaire à Supprimer. On ajoute en tête si le rang est nul ou la liste est vide,
-// sinon, on ajoute dans la liste commençant au successeur, avec le rang r-1
 Liste Ajouter(Liste L, Element E, int r) {
   if (ElementEstValide(E) == false)
     return L;
   if (r == 0 || EstVide(L) == true)
     return Creer(E, L);
-  SetSucc(L, Ajouter(GetSucc(L),E,r-1));
+  int i = 0;
+  Liste tmpL = L;
+  while (EstVide(GetSucc(tmpL)) == false && i < r - 1) {
+    tmpL = GetSucc(tmpL);
+    i++;
+  }
+  SetSucc(tmpL, Creer(E, GetSucc(tmpL)));
   return L;
 }
 
-// principe de récursivité: dans cette version, il n'y a pas recopie des cellules de la liste,
-// mais une inversion "sur place". La liste originale n'existe donc plus.
-// Si la liste est vide ou a une seule cellule, on renvoie la liste
-// Sinon, la liste a au moins deux cellules.
-// on commence par inverser la liste qui commence à la deuxième 
-// et on stocke le résultat dans la liste Linv
-// ensuite, on place L à la fin de Linv. 
-// La difficulté à éviter est qu'il faudrait a priori appeler Dernier pour
-// récupérer la dernière cellule de Linv. 
-// Mais une anayse fine nous permet d'éviter ça. Suivez, car c'est subtil:
-// comme on n'a pas modifié la première cellule (L), le champ next contient 
-// l'adresse la cellule qui, après inversion du reste, se retrouve en dernière position
-// dans Linv. Donc pas besoin de la déterminer en appelant Dernier !
-// Voyons ça sur un exemple.
-// L est ma liste qui contient les cellules successives
-// L -> 1 -> 2 -> 3 -> 4 -> null
-// on inverse à partir de 2 pour obtenir Linv. Ca donne
-// L -> 1 -> 2 <- 3 <- 4 <- Linv
-// et même plus précisément, comme on n'a pas modifié le successeur de la dernière cellule
-// L -> 1 -> 2 <-> 3 <- 4 <- Linv
-// on peut alors faire
-// s= GetSucc(L)  // s pointe vers 2
-// SetSucc(s,L) 
-// on inverse la flèche entre 2 et 1, et ce faisant on retire la flèche allant de 2 vers 3, 
-// ce qui donne
-// L -> 1 <-> 2 <- 3 <- 4 <- Linv
-//(on a une double flèche entre 1 et 2 car on n'a pas modifié L)
-// il suffit alors d'indiquer que L est la dernière cellule de la liste inversée
-// SetSucc(L,liste_vide)
-// ce qui donne
-// null <- 1 <- 2 <- 3 <- 4 <- Linv
-// on renvoie alors Linv
 Liste Inverser(Liste L) {
-  if (EstVide(GetSucc(L))) return L; // liste vide ou à un seul élément
-  // on inverse le reste de la liste
-  Liste Linv = Inverser(GetSucc(L));
-  // comme on n'a pas modifié L, GetSucc(L) indique le dernier élément de Linv.
-  // on va donc pouvoir y placer L
-  SetSucc(GetSucc(L),L);
-  // puis on indique que L est la dernière cellule
-  SetSucc(L,liste_vide);
-
+  Liste Linv = liste_vide;
+  Liste tmpL = L;
+  while (EstVide(tmpL) == false) {
+    Linv = Creer(GetContenu(tmpL), Linv);
+    tmpL = GetSucc(tmpL);
+  }
   return Linv;
 }
 
-// principe de récursivité
-// si la liste est vide, on ne fait rien
-// sinon on crée une liste avec le premier élément comme contenu
-// et comme successeur le résultat de la copie de la suite de la liste
 Liste Copier(Liste L) {
-  return EstVide(L) ? L : Creer(GetContenu(L), Copier(GetSucc(L)));
-}
-
-// principe de récursivité
-// si la liste est vide, on ne fait rien, on la renvoie
-// sinon, on detruit la cellule et on vide le sucesseur
-Liste Vider(Liste L) {
-  return EstVide(L) ? L : Vider(Detruire(L));
-}
-
-// EXEMPLE DE MAIN
-int main(int argc, char *argv[]) {
-  // création et affichage
-
-  int i;
-  Liste L = liste_vide;
-  for (i = 1; i < argc; i++) {
-    Element E = ElementLire(argv[i]);
-    L = Ajouter(L, E, 0); // gère le cas où E est invalide
+  Liste Lcopie = Creer(GetContenu(L), liste_vide);
+  Liste tmpL = GetSucc(L), tmpC = Lcopie;
+  while (EstVide(tmpL) == false) {
+    SetSucc(tmpC, Creer(GetContenu(tmpL), liste_vide));
+    tmpC = GetSucc(tmpC);
+    tmpL = GetSucc(tmpL);
   }
+  return Lcopie;
+}
 
-  // test de Longueur
-  printf("La longueur de la liste est : %d\n", Longueur(L));
+Liste Vider(Liste L) {
+  while (EstVide(L) == false)
+    L = Detruire(L);
+  return L;
+}
 
-  // Afficher
-  printf("Affichage de la liste\n");
-  Afficher(L);
 
-  // Ajouter
-  printf("Ajout au début\n");
-  L = Ajouter(L, (Element)123.4, 0);
-  Afficher(L);
+int main(){
+	int var ,r;
+	Liste *L;
+	menu(L);
+}
 
-  printf("Ajout au milieu\n");
-  unsigned int len = Longueur(L);
-  if (len >= 2) {
-    L = Ajouter(L, (Element)42.36, len / 2);
-    Afficher(L);
-    len++; // on incrémente pour ne pas avoir à recalculer la longueur,
-           // nécessaire pour ajouter un élément à la fin
-  } else
-    printf("La liste doit avoir au moins deux éléments pour une insertion "
-           "entre deux éléments existants\n");
 
-  printf("Ajout en fin de liste\n");
-  L = Ajouter(L, (Element)98.76, len);
-  Afficher(L);
 
-  printf("Ajouter après la fin de la liste\n");
-  L = Ajouter(L, (Element)10.10, len + 100);
-  Afficher(L);
-
-  // Supprimer
-  len = Longueur(L);
-  if (len > 2) // devrait toujours être vrai, vu ce qui précède...
-  {
-    printf("Suppression élément milieu\n");
-    L = Supprimer(L, len / 2);
-    Afficher(L);
-  } else
-    printf(
-        "La liste n'est pas assez longue pour supprimer un élément médian\n");
-
-  printf("Suppression élément après la fin\n"); // ne doit rien faire !
-  L = Supprimer(L, len + 10);
-  Afficher(L);
-
-  printf("Suppression dernier élément\n");
-  L = Supprimer(L, Longueur(L) - 1); // dernier élément => rang=Longueur(L)-1
-  Afficher(L);
-
-  printf("Suppression premier élément\n");
-  L = Supprimer(L, 0);
-  Afficher(L);
-
-  // Copier
-  printf("Copier\n");
-  Liste Lcopie = Copier(L);
-  Afficher(Lcopie);
-
-  // Inverser
-  printf("Inverser\n");
-  L = Inverser(L); // inversion sur place, il faut donc mettre à jour L
-  Afficher(L);
-
-  // Vider
-  printf("Vider\n");
-  L = Vider(L);
-  Lcopie = Vider(Lcopie);
-  if (EstVide(L) == false)
-    Afficher(L);
-  else
-    printf("Liste vide\n");
-  // inutile d'afficher autre chose car on vérifie juste ici que Vider renvoie
-  // bien la liste vide...
-
-  return 0;
+void menu(Liste L){
+	int choix;
+	int option = 1;
+	while (option){
+	system("clear");
+	printf("------MENU PILE------ \n");
+	printf("1 -> créer une liste \n");
+	printf("2 -> tri à bulles \n");
+	printf("3 -> tri par insertion \n");
+	printf("4 -> tri par selection \n");
+	printf("5 -> afficher la liste \n");
+	printf("--------------------- \n");
+	printf("choix ? \n");
+	scanf("%d", &choix);
+	
+	switch (choix){
+		case 1: creerliste(L); break;
+		case 2: TriBulle(L);
+			break; 
+		case 3: TriInsertion(L);
+			break;
+		case 4: TriSelection(L);
+			break;
+		case 5: Afficher(L);
+			getchar();
+			getchar();
+			break;
+		
+	}
+	}
 }
