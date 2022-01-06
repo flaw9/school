@@ -14,6 +14,10 @@ INSERT INTO `user` VALUES ("marckf", "password");
 INSERT INTO `user` VALUES ("ladirayh", "azerty");
 INSERT INTO `user` VALUES ("macrone", "lavezvouslesmains");
 INSERT INTO `user` VALUES ("stalinej", "gulagpourlesopposants");
+
+INSERT INTO `contact` VALUES (1, "Maman", "Ministere de l'Education", "CPE", "+33123456789", "+33645763929", "mamandeflavien@email.com", "", "12 Rue de Flavien, 67120 Quelque-part", "", "", "Juste avant le divorce");
+INSERT INTO `contact` VALUES (2, "Papounet", "Pole Emploi", "Chomeur", "", "065060708090", "papounetdehugo@chomage.gouv.fr", "", "Sous un pont", "", "", "Juste avant le divorce");
+INSERT INTO `contact` VALUES (3, "Jean-Mimi", "Ministere de l'Education", "Ministre (askip)", "", "", "jenmimiblanquer@eduaction.gouv.fr", "", "Sous un pont", "", "", "Hier soir UwU");
 ```
 
 ## 4.
