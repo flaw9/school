@@ -50,3 +50,8 @@ function get_contact_by_contact_id($pdo, $cid){
     $stmt = $pdo->prepare($sql);
     return $stmt->fetchAll();
 ```
+
+*Terminé à 11 heures 18 minutes*
+
+# Exercice 3
+
