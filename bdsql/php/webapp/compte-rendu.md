@@ -39,6 +39,14 @@ get_contact_id_by_user_field_value($pdo, 1, 'email', 'univ-lorraine')
 function get_contact_id_by_user_id($pdo, $uid){
     $sql = "SELECT cid FROM contact WHERE uid = $uid";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([':val' => $value]);
     return $stmt->fetchAll(PDO::FETCH_COLUMN);
+```
+
+## 4.
+
+```php
+function get_contact_by_contact_id($pdo, $cid){
+    $sql = "SELECT * FROM contact WHERE cid = $cid";
+    $stmt = $pdo->prepare($sql);
+    return $stmt->fetchAll();
 ```
