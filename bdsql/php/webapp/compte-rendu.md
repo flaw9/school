@@ -8,3 +8,13 @@ CREATE TABLE IF NOT EXISTS `contact` (cid INTEGER PRIMARY KEY AUTO_INCREMENT, ui
 ```
 
 ## 3.
+
+```sql
+SELECT cid FROM contact JOIN user ON user.uid = contact.uid WHERE user.uid = :uid;
+```
+
+## 4.
+
+```sql
+SELECT * FROM contact WHERE cid = :cid;
+```
