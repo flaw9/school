@@ -40,6 +40,7 @@ function get_contact_id_by_user_id($pdo, $uid){
     $sql = "SELECT cid FROM contact WHERE uid = $uid";
     $stmt = $pdo->prepare($sql);
     return $stmt->fetchAll(PDO::FETCH_COLUMN);
+}
 ```
 
 ## 4.
@@ -49,6 +50,7 @@ function get_contact_by_contact_id($pdo, $cid){
     $sql = "SELECT * FROM contact WHERE cid = $cid";
     $stmt = $pdo->prepare($sql);
     return $stmt->fetchAll();
+}
 ```
 
 *Terminé à 11 heures 18 minutes*
