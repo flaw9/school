@@ -7,6 +7,15 @@ CREATE TABLE IF NOT EXISTS `user` (uid INTEGER PRIMARY KEY AUTO_INCREMENT, ident
 CREATE TABLE IF NOT EXISTS `contact` (cid INTEGER PRIMARY KEY AUTO_INCREMENT, uid INT, nom TEXT NOT NULL, entreprise TEXT, fonction TEXT, telfix TEXT, telport TEXT, email TEXT, website TEXT, adresse TEXT, rib TEXT, notes TEXT, datederniercontact TIMESTAMP);
 ```
 
+> Génération des exemples
+
+```sql
+INSERT INTO `user` VALUES ("marckf", "password");
+INSERT INTO `user` VALUES ("ladirayh", "azerty");
+INSERT INTO `user` VALUES ("macrone", "lavezvouslesmains");
+INSERT INTO `user` VALUES ("stalinej", "gulagpourlesopposants");
+```
+
 ## 4.
 
 ```sql
@@ -57,3 +66,4 @@ function get_contact_by_contact_id($pdo, $cid){
 
 # Exercice 3
 
+*Voir fichiers.*
