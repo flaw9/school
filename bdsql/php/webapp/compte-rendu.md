@@ -32,3 +32,13 @@ Lors de l'appel
 get_contact_id_by_user_field_value($pdo, 1, 'email', 'univ-lorraine')
 ```
 , la fonction renvoie le `cid` des contacts de l'utilisateur ayant l'uid `1` dont le champ `email` contient la chaine de caractères `univ-lorraine`.
+
+## 3.
+
+```php
+function get_contact_id_by_user_id($pdo, $uid){
+    $sql = "SELECT cid FROM contact WHERE uid = $uid";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([':val' => $value]);
+    return $stmt->fetchAll(PDO::FETCH_COLUMN);
+```
