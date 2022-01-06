@@ -7,13 +7,13 @@ CREATE TABLE IF NOT EXISTS `user` (uid INTEGER PRIMARY KEY AUTO_INCREMENT, ident
 CREATE TABLE IF NOT EXISTS `contact` (cid INTEGER PRIMARY KEY AUTO_INCREMENT, uid INT, nom TEXT NOT NULL, entreprise TEXT, fonction TEXT, telfix TEXT, telport TEXT, email TEXT, website TEXT, adresse TEXT, rib TEXT, notes TEXT, datederniercontact TIMESTAMP);
 ```
 
-## 3.
+## 4.
 
 ```sql
 SELECT cid FROM contact JOIN user ON user.uid = contact.uid WHERE user.uid = :uid;
 ```
 
-## 4.
+## 5.
 
 ```sql
 SELECT * FROM contact WHERE cid = :cid;
