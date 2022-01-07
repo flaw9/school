@@ -248,23 +248,27 @@ Liste Vider(Liste L) {
   return L;
 }
 
-int displayMenu(bool listeExiste)
+int displayMenu(bool listeExiste, bool displayMenu)
 {
-    if(listeExiste) {
-        printf("-----\n");
-        printf("0: Quitter\n");
-        printf("2: Tri à bulles\n");
-        printf("3: Tri par insertion.\n");
-        printf("4: Tri par sélection.\n");
-        printf("5: Afficher la liste.\n");
-        printf("-----\n");
-    } else {
-        printf("-----\n");
-        printf("0: Quitter\n");
-        printf("1: Créer la liste\n");
-        printf("-----\n");
+    if(displayMenu) {
+      if(listeExiste) {
+          printf("-----\n");
+          printf("0: Quitter\n");
+          printf("2: Tri à bulles\n");
+          printf("3: Tri par insertion.\n");
+          printf("4: Tri par sélection.\n");
+          printf("5: Afficher la liste.\n");
+          printf("6: Afficher ce menu.\n");
+          printf("-----\n");
+      } else {
+          printf("-----\n");
+          printf("0: Quitter\n");
+          printf("1: Créer la liste\n");
+          printf("6: Afficher ce menu.\n");
+          printf("-----\n");
+      }
     }
-    printf("Instruction (0 pour quitter): ");
+    printf("Instruction (6 pour afficher le menu): ");
     int request;
     scanf("%i", &request);
     return request;
@@ -273,9 +277,10 @@ int displayMenu(bool listeExiste)
 int main() {
   Liste L;
   int result;
-  bool listeExiste = false;
+  bool listeExiste = false; bool afficherMenu = true;
   while (result != 0) {
-    result = displayMenu(listeExiste);
+    result = displayMenu(listeExiste, afficherMenu);
+    afficherMenu = false;
     if (!listeExiste && result != 1) {
       printf("Vous devez d'abord créer une liste !\n");
     } else if (listeExiste && result == 1) {
@@ -291,6 +296,7 @@ int main() {
               L = Creer(e,L);
             }
             listeExiste = true;
+            afficherMenu = true;
             break;
           }
         case 2:
@@ -305,6 +311,8 @@ int main() {
         case 5:
           Afficher(L);
           break;
+        case 6:
+          afficherMenu = true;
         default:
           break;
       }
