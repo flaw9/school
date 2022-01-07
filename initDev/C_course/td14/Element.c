@@ -11,7 +11,7 @@ Element element_invalide = -1;
 
 // on fournit trois opérations (fonctions. Ce sont les seules autorisées.)
 // renvoie true si l'élément E est valide, false sinon
-bool ElementEstValide(Element E) { return E < 0 ? false : true; }
+bool ElementEstValide(Element E) { return E < 0 ? true : false; }
 
 // affiche l'élément E. Affiche "INVALID" si E n'est pas valide
 void ElementAfficher(Element E) {

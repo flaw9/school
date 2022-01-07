@@ -62,12 +62,12 @@ void SetSucc(Liste L, Liste N) {
 Liste Creer(Element E, Liste L) {
   if (!ElementEstValide(E))
     return liste_vide;
-
+  
   Liste ret = malloc(sizeof(Cellule));
   ret->data = E;
   ret->next = L;
   ret->prev = liste_vide;
-  if(L != liste_vide) L -> prev = ret;
+  if(L != liste_vide) L->prev = ret;
   return ret;
 }
 
@@ -92,12 +92,12 @@ unsigned int Longueur(Liste L) {
 
 void Afficher(Liste L) {
   Liste tmpL = L;
-  while(!EstVide(tmpL)) {
-    tmpL = GetPred(tmpL);
+  if(EstVide(L)) {
+    printf("La liste est vide !\n");
   }
   while (!EstVide(tmpL)) {
     printf("%d ;", GetContenu(tmpL));
-    tmpL = GetSucc(tmpL);
+    tmpL = GetPred(tmpL);
   }
   printf("\n");
 }
@@ -276,33 +276,39 @@ int main() {
   bool listeExiste = false;
   while (result != 0) {
     result = displayMenu(listeExiste);
-    switch(result) {
-      case 1:
-        if (!listeExiste) {
-          printf("Entrez -1 pour arrêter le processus.\n");
-          int choix;
-          while(choix != -1){
-            printf("Valeur suivante: ");
-            scanf("%i", &choix);
-            L = Creer(choix,L);
+    if (!listeExiste && result != 1) {
+      printf("Vous devez d'abord créer une liste !\n");
+    } else if (listeExiste && result == 1) {
+      printf("Une liste existe déjà !\n");
+    } else {
+      switch(result) {
+        case 1:
+          if (!listeExiste) {
+            printf("Entrez -1 pour arrêter le processus.\n");
+            int choix;
+            while(choix != -1){
+              printf("Valeur suivante: ");
+              scanf("%i", &choix);
+              L = Creer(choix,L);
+            }
+            listeExiste = true;
+            break;
           }
-          listeExiste = true;
+        case 2:
+          TriBulle(L);
           break;
-        }
-      case 2:
-        TriBulle(L);
-        break;
-      case 3:
-        TriInsertion(L);
-        break;
-      case 4:
-        TriSelection(L);
-        break;
-      case 5:
-        Afficher(L);
-        break;
-      default:
-        break;
+        case 3:
+          TriInsertion(L);
+          break;
+        case 4:
+          TriSelection(L);
+          break;
+        case 5:
+          Afficher(L);
+          break;
+        default:
+          break;
+      }
     }
   }
 }
