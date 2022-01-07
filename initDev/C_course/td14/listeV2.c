@@ -83,7 +83,7 @@ Liste Detruire(Liste L) {
 unsigned int Longueur(Liste L) {
   Liste tmpL = L;
   int n = 0;
-  while (EstVide(tmpL) == false) {
+  while (!EstVide(tmpL)) {
     n++;
     tmpL = GetSucc(tmpL);
   }
@@ -92,15 +92,19 @@ unsigned int Longueur(Liste L) {
 
 void Afficher(Liste L) {
   Liste tmpL = L;
-  while (EstVide(tmpL) == false) {
-    ElementAfficher(GetContenu(tmpL));
+  while(!EstVide(tmpL)) {
+    tmpL = GetPred(tmpL);
+  }
+  while (!EstVide(tmpL)) {
+    printf("%d ;", GetContenu(tmpL));
     tmpL = GetSucc(tmpL);
   }
+  printf("\n");
 }
 
 void AfficherPred(Liste L) {
   Liste tmpL = L;
-  while (EstVide(tmpL) == false) {
+  while (!EstVide(tmpL)) {
     ElementAfficher(GetContenu(tmpL));
     tmpL = GetPred(tmpL);
   }
@@ -108,8 +112,7 @@ void AfficherPred(Liste L) {
 
 Liste Rechercher(Liste L, Element E) {
   Liste tmpL = L;
-  while (EstVide(tmpL) == false &&
-         ElementComparer(GetContenu(tmpL), E) == false)
+  while (!EstVide(tmpL) && !ElementComparer(GetContenu(tmpL), E))
     tmpL = GetSucc(tmpL);
   return tmpL;
 }
@@ -118,7 +121,7 @@ bool EstDans(Liste L, Element E) { return !(EstVide(Rechercher(L, E))); }
 
 Liste Dernier(Liste L) {
   Liste tmpL = L;
-  while (EstVide(GetSucc(tmpL)) == false)
+  while (!EstVide(GetSucc(tmpL)))
     tmpL = GetSucc(tmpL);
   return tmpL;
 }
@@ -134,7 +137,7 @@ void Echange(Liste L1, Liste L2) {
 Liste imin(Liste L) {
   Liste tmpL = L;
   Liste tamp = tmpL;
-  while(EstVide(tmpL) == false){ 
+  while(!EstVide(tmpL)){ 
     if(GetContenu(tamp) > GetContenu(tmpL))
       tamp = tmpL;
     tmpL = GetSucc(tmpL);
@@ -145,9 +148,9 @@ Liste imin(Liste L) {
 void TriBulle(Liste L) {
   Liste tmpL = L;
   bool tri = false;
-  while(tri == false){
+  while(!tri){
     tri = true;
-    while(EstVide(tmpL) == false){
+    while(!EstVide(tmpL)){
     	if(GetContenu(tmpL) > GetContenu(GetSucc(tmpL))){
     	  tri = false;
     	  Echange(tmpL,GetSucc(tmpL));
@@ -159,7 +162,7 @@ void TriBulle(Liste L) {
 
 void TriSelection(Liste L){
   Liste tmpL = L;
-  while (EstVide(tmpL) == false){
+  while (!EstVide(tmpL)){
     Echange(tmpL,imin(L));
     tmpL = GetSucc(tmpL);
     }
@@ -167,7 +170,7 @@ void TriSelection(Liste L){
 
 void TriInsertion(Liste L){
   Liste tmpL = GetSucc(L);
-  while(EstVide(tmpL) == false){
+  while(!EstVide(tmpL)){
     Liste tampL1 = tmpL;
     while(GetContenu(tampL1) < GetContenu(GetPred(tampL1))){
       Echange(tampL1,GetPred(tampL1));
@@ -180,20 +183,6 @@ void TriInsertion(Liste L){
   }
 
 }
-  
-Liste creerListe(Liste L){
-  int choix;
-  printf("Entrez -1 pour arrêter le processus.\n");
-  while(GetContenu(L) != -1){
-    printf("Valeur suivante:  \n");
-    scanf("%d", &choix);
-    L = Creer(choix,L);
-  }
-  while(EstVide(L) == false){
-    L = GetPred(L);
-  }
-  return L;
-}
 
 Liste Supprimer(Liste L, int r) {
   if (r == 0 || EstVide(L))
@@ -201,7 +190,7 @@ Liste Supprimer(Liste L, int r) {
 
   int i = 0;
   Liste tmpL = L;
-  while (EstVide(GetSucc(tmpL)) == false && i < r - 1) {
+  while (!EstVide(GetSucc(tmpL)) && i < r - 1) {
     tmpL = GetSucc(tmpL);
     i++;
   }
@@ -212,19 +201,19 @@ Liste Supprimer(Liste L, int r) {
 Liste Concatener(Liste L1, Liste L2) {
   if (EstVide(L1))
     return L2;
-  if (EstVide(L2) == false)
+  if (!EstVide(L2))
     SetSucc(Dernier(L1), L2);
   return L1;
 }
 
 Liste Ajouter(Liste L, Element E, int r) {
-  if (ElementEstValide(E) == false)
+  if (!ElementEstValide(E))
     return L;
   if (r == 0 || EstVide(L) == true)
     return Creer(E, L);
   int i = 0;
   Liste tmpL = L;
-  while (EstVide(GetSucc(tmpL)) == false && i < r - 1) {
+  while (!EstVide(GetSucc(tmpL)) && i < r - 1) {
     tmpL = GetSucc(tmpL);
     i++;
   }
@@ -235,7 +224,7 @@ Liste Ajouter(Liste L, Element E, int r) {
 Liste Inverser(Liste L) {
   Liste Linv = liste_vide;
   Liste tmpL = L;
-  while (EstVide(tmpL) == false) {
+  while (!EstVide(tmpL)) {
     Linv = Creer(GetContenu(tmpL), Linv);
     tmpL = GetSucc(tmpL);
   }
@@ -245,7 +234,7 @@ Liste Inverser(Liste L) {
 Liste Copier(Liste L) {
   Liste Lcopie = Creer(GetContenu(L), liste_vide);
   Liste tmpL = GetSucc(L), tmpC = Lcopie;
-  while (EstVide(tmpL) == false) {
+  while (!EstVide(tmpL)) {
     SetSucc(tmpC, Creer(GetContenu(tmpL), liste_vide));
     tmpC = GetSucc(tmpC);
     tmpL = GetSucc(tmpL);
@@ -254,7 +243,7 @@ Liste Copier(Liste L) {
 }
 
 Liste Vider(Liste L) {
-  while (EstVide(L) == false)
+  while (!EstVide(L))
     L = Detruire(L);
   return L;
 }
@@ -289,9 +278,17 @@ int main() {
     result = displayMenu(listeExiste);
     switch(result) {
       case 1:
-        L = creerListe(L);
-        listeExiste = true;
-        break;
+        if (!listeExiste) {
+          printf("Entrez -1 pour arrêter le processus.\n");
+          int choix;
+          while(choix != -1){
+            printf("Valeur suivante: ");
+            scanf("%i", &choix);
+            L = Creer(choix,L);
+          }
+          listeExiste = true;
+          break;
+        }
       case 2:
         TriBulle(L);
         break;
