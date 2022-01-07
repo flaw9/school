@@ -92,12 +92,12 @@ unsigned int Longueur(Liste L) {
 
 void Afficher(Liste L) {
   Liste tmpL = L;
-  if(EstVide(L)) {
+  if(EstVide(tmpL)) {
     printf("La liste est vide !\n");
   }
   while (!EstVide(tmpL)) {
-    printf("%d ;", GetContenu(tmpL));
-    tmpL = GetPred(tmpL);
+    printf("%d;", GetContenu(tmpL));
+    tmpL = GetSucc(tmpL);
   }
   printf("\n");
 }
@@ -284,12 +284,11 @@ int main() {
       switch(result) {
         case 1:
           if (!listeExiste) {
-            printf("Entrez -1 pour arrêter le processus.\n");
-            int choix;
-            while(choix != -1){
-              printf("Valeur suivante: ");
-              scanf("%i", &choix);
-              L = Creer(choix,L);
+            int size = 10;
+            int e;
+            for(int i = 0; i < size; i++) {
+              e = rand() % 100;
+              L = Creer(e,L);
             }
             listeExiste = true;
             break;
