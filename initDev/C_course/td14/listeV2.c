@@ -181,7 +181,7 @@ void TriInsertion(Liste L){
 
 }
   
-Liste creerliste(Liste L){
+Liste creerListe(Liste L){
   int choix;
   printf("Entrez -1 pour arrêter le processus.\n");
   while(GetContenu(L) != -1){
@@ -293,13 +293,13 @@ int main() {
         L = creerListe(L);
         break;
       case 2:
-        L = TriBulle(L);
+        TriBulle(L);
         break;
       case 3:
-        L = TriInsertion(L);
+        TriInsertion(L);
         break;
       case 4:
-        L = TriSelection(L);
+        TriSelection(L);
         break;
       case 5:
         Afficher(L);
