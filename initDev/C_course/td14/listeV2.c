@@ -286,7 +286,6 @@ int main() {
   int result;
   bool listeExiste = false;
   while (result != 0) {
-    system("clear");
     result = displayMenu(listeExiste);
     switch(result) {
       case 1:
@@ -304,8 +303,6 @@ int main() {
         break;
       case 5:
         Afficher(L);
-        getchar();
-        getchar();
         break;
       default:
         break;
