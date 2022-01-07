@@ -291,6 +291,7 @@ int main() {
     switch(result) {
       case 1:
         L = creerListe(L);
+        listeExiste = true;
         break;
       case 2:
         TriBulle(L);
