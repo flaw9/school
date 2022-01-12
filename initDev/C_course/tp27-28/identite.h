@@ -1,3 +1,5 @@
+#ifndef __IDENTITE_H__
+#define __IDENTITE_H__
 #include <stdbool.h>
 
 typedef struct
@@ -49,3 +51,5 @@ extern void identitePrint(Identite *id);
 // une Identite inalide vient avant toute autre
 // deux Identite invalides sont égales
 extern int identiteCmp(Identite *a, Identite *b);
+
+#endif // __IDENTITE_H__
