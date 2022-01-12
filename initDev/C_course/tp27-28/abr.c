@@ -62,7 +62,16 @@ ABR abrDelete(ABR a)
 // @note : Une Identite invalide n'est pas insérée et l'ABR est renvoyé sans modification
 ABR abrInsert(ABR a, Identite *id)
 {
-    return arbre_vide;
+    if (identiteIsValid(id)) {
+        if (!a) return nodeNew(id, arbre_vide, arbre_vide);
+
+        int comp = identiteCmp(id, a->id);
+        if(comp < 0)
+            a->sad=abrInsert(a->sad, id);
+        else if (comp > 0)
+            a->sag=abrInsert(a->sag, id);
+    }
+    return a;
 }
 
 // calcule la taille d'un ABR
@@ -84,7 +93,12 @@ unsigned int abrSize(ABR a)
 // @return la hauteur de l'ABR
 unsigned int abrHeight(ABR a)
 {
-    return 0;
+    if (!a) return 0;
+
+    int tailleG, tailleD = 0;
+    tailleG = abrHeight(a->sag);
+    tailleD = abrHeight(a->sad);
+    return 1 + tailleG > tailleD ? tailleG : tailleD;
 }
 /*
 abrLNR (Left Node Right) (infixe)
