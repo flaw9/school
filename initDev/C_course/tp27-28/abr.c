@@ -14,7 +14,15 @@ const ABR arbre_vide; // = (ABR)NULL
 
 Node *nodeNew(Identite *id, ABR sag, ABR sad)
 {
-    return (Node *)NULL;
+    if (!identiteIsValid(id)) return (Node *)NULL;
+    Node *ret = malloc(sizeof(Node));
+    if (ret) {
+        ret->id = id;
+        ret->sag = sag;
+        ret->sad = sad;
+    }
+
+    return ret;
 }
 // désallocation d'un Node
 // @param
@@ -24,7 +32,10 @@ Node *nodeNew(Identite *id, ABR sag, ABR sad)
 // @note : désalloue l'Identite stockée dans le Node
 Node *nodeDelete(Node *n)
 {
-    return (Node *)NULL;
+    if (n) {
+        identiteDelete(n->id);
+        free(n);
+    }
 }
 
 // désallocation d'un ABR
