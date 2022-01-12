@@ -1,5 +1,6 @@
 #include "Identite.h"
 #include <stdlib.h>
+#include <string.h>
 #include <stdbool.h>
 
 // allocation d'une Identite
@@ -27,7 +28,16 @@ Identite *identiteNew(char *nom, char *prenom)
 // id: l'Identite à libérer
 // @return (Identite *)NULL
 // fonctionne même si id, id->nom ou id->prenom sont nuls
-extern Identite *identiteDelete(Identite *id);
+Identite *identiteDelete(Identite *id)
+{
+    if(id)
+    {
+        if (id->nom) free(nom);
+        if (id->prenom) free(prenom);
+        free(id);
+    }
+    return (Identite *)NULL;
+}
 
 // vérifie la validité d'une Identite
 // @param
