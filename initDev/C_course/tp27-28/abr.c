@@ -1,5 +1,6 @@
 #include "abr.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 const ABR arbre_vide; // = (ABR)NULL
 
