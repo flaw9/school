@@ -76,7 +76,7 @@ extern void abrLNR(ABR a, void (*f)(Identite *));
 // @param
 // fname: nom du fichier à lire
 // @return
-// un ABR
-extern ABR abrReadFromCSV(char *file);
+// l'ABR ainsi créé
+extern ABR abrReadFromCSV(char *fname);
 
 #endif // __ABR_H__

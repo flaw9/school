@@ -1,3 +1,4 @@
 *.ignore
 *.odt
 initDev/C_course/**/executables/
+initDev/C_course/**/*.o
