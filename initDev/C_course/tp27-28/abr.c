@@ -113,7 +113,11 @@ LRN (postfixe)
 // @return None
 void abrLNR(ABR a, void (*f)(Identite *))
 {
-    printf("None\n");
+    if (a) {
+        abrLNR(a->sag, f);
+        f(a->id);
+        abrLNR(a->sad, f);
+    }
 }
 
 // lis les Identites d'un fichier CSV
