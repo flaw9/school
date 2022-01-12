@@ -71,7 +71,11 @@ ABR abrInsert(ABR a, Identite *id)
 // @return la taille de l'ABR
 unsigned int abrSize(ABR a)
 {
-    return 0;
+    if (!a) return 0;
+    if (!a->sad && !a->sag) {
+        return 1;
+    }
+    return 1 + abrSize(a->sad) + abrSize(a->sag);
 }
 
 // calcule la hauteur d'un ABR
