@@ -14,6 +14,12 @@ Identite *identiteNew(char *nom, char *prenom)
 {
     if(!nom || !prenom) return (Identite *)NULL;
     Identite *ret = malloc(sizeof(Identite));
+    if(ret)
+    {
+        ret->nom = strdup(nom);
+        ret->prenom = strdup(prenom);
+    }
+    return ret;
 }
 
 // libération mémoire d'une Identite
