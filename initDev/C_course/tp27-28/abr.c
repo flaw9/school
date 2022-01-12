@@ -125,7 +125,7 @@ void abrLNR(ABR a, void (*f)(Identite *))
 // @param
 // fname: nom du fichier à lire
 // @return
-// un ABR
+// l'ABR ainsi créé
 ABR abrReadFromCSV(char *fname){
-    return arbre_vide;
+    
 }
