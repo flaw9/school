@@ -45,7 +45,10 @@ Identite *identiteDelete(Identite *id)
 // @return
 // false si l'Identite est invalide, càd id->nom ou id->prenom est NULL
 // true sinon
-extern bool identiteIsValid(Identite *id);
+bool identiteIsValid(Identite *id)
+{
+    return id && id->nom && id->prenom ? true : false;
+}
 
 // affiche une Identite sous la forme
 // "Nom: <nom> ; Prenom: <prenom>"
