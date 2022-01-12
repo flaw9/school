@@ -48,7 +48,7 @@ extern void identitePrint(Identite *id);
 // - une valeur négative si a vient avant b
 // - 0 si a=b
 // - une valeur positive si a vient après b
-// une Identite inalide vient avant toute autre
+// une Identite invalide vient avant toute autre
 // deux Identite invalides sont égales
 extern int identiteCmp(Identite *a, Identite *b);
 
