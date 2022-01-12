@@ -1,7 +1,7 @@
 #include "Identite.h"
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
+#include <stdio.h>
 
 // allocation d'une Identite
 // @param
@@ -13,9 +13,9 @@
 // nom et prenom sont copiés par deep copy
 Identite *identiteNew(char *nom, char *prenom)
 {
-    if(!nom || !prenom) return (Identite *)NULL;
+    if (!nom || !prenom) return (Identite *)NULL;
     Identite *ret = malloc(sizeof(Identite));
-    if(ret)
+    if (ret)
     {
         ret->nom = strdup(nom);
         ret->prenom = strdup(prenom);
@@ -30,7 +30,7 @@ Identite *identiteNew(char *nom, char *prenom)
 // fonctionne même si id, id->nom ou id->prenom sont nuls
 Identite *identiteDelete(Identite *id)
 {
-    if(id)
+    if (id)
     {
         if (id->nom) free(nom);
         if (id->prenom) free(prenom);
@@ -56,7 +56,13 @@ bool identiteIsValid(Identite *id)
 // id: l'Identite à afficher
 // @return Rien
 // @note affiche "Identite invalide" si l'Identite est invalide
-extern void identitePrint(Identite *id);
+void identitePrint(Identite *id)
+{
+    if (identiteIsValid(id))
+        printf("Nom: %s ; Prenom: %s\n", id->nom, id->prenom);
+    else
+        printf("Identite invalide\n");
+}
 
 // compare deux Identites
 // @param
@@ -67,4 +73,18 @@ extern void identitePrint(Identite *id);
 // - une valeur positive si a vient après b
 // une Identite inalide vient avant toute autre
 // deux Identite invalides sont égales
-extern int identiteCmp(Identite *a, Identite *b);
+int identiteCmp(Identite *a, Identite *b)
+{
+    if (identiteIsValid(a))
+    {
+        if (identiteIsValid(b))
+        {
+            int cn = strcmp(a->nom, b->nom); // évite un double appel à strcmp
+            return cn ? cn : strcmp(a->prenom, b->prenom);
+        }
+    // a est valide et b est invalide
+    return 1;
+    }
+    if (identiteIsValid(b)) return -1; // a invalide, b valide
+    return 0; // a invalide, b invalide
+}
