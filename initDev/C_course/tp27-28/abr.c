@@ -45,11 +45,10 @@ Node *nodeDelete(Node *n)
 // @return arbre_vide
 ABR abrDelete(ABR a)
 {
-    if (!a->sag && !a->sad) {
-        nodeDelete(a);
-    } else {
-        a->sad = abrDelete(a->sad);
+    if (a)
+    {
         a->sag = abrDelete(a->sag);
+        a->sad = abrDelete(a->sad);
         nodeDelete(a);
     }
     return arbre_vide;
