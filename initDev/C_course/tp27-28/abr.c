@@ -12,7 +12,7 @@ const ABR arbre_vide; // = (ABR)NULL
 // @return
 // le Node alloué
 
-Node *nodeNew(Identite *id, ABR sag, ABR sag)
+Node *nodeNew(Identite *id, ABR sag, ABR sad)
 {
     return (Node *)NULL;
 }
@@ -33,7 +33,7 @@ Node *nodeDelete(Node *n)
 // @return arbre_vide
 ABR abrDelete(ABR a)
 {
-    return abr_vide;
+    return arbre_vide;
 }
 
 // insère une Identite dans un ABR
@@ -44,7 +44,7 @@ ABR abrDelete(ABR a)
 // @note : Une Identite invalide n'est pas insérée et l'ABR est renvoyé sans modification
 ABR abrInsert(ABR a, Identite *id)
 {
-    return abr_vide;
+    return arbre_vide;
 }
 
 // calcule la taille d'un ABR
@@ -86,6 +86,6 @@ void abrLNR(ABR a, void (*f)(Identite *))
 // fname: nom du fichier à lire
 // @return
 // un ABR
-ABR abrReadFromCsv(char *file){
-    return abr_vide;
+ABR abrReadFromCSV(char *file){
+    return arbre_vide;
 }

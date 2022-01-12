@@ -1,4 +1,4 @@
-#include "Identite.h"
+#include "identite.h"
 #include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
@@ -32,8 +32,8 @@ Identite *identiteDelete(Identite *id)
 {
     if (id)
     {
-        if (id->nom) free(nom);
-        if (id->prenom) free(prenom);
+        if (id->nom) free(id->nom);
+        if (id->prenom) free(id->prenom);
         free(id);
     }
     return (Identite *)NULL;

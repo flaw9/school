@@ -1,3 +1,6 @@
-bst: Identite.o ABR.o bst.o
+%.o: %.c %.h
+	$(COMPILE.c) $(OUTPUT_OPTION) $<
+
+bst: identite.o abr.o bst.o
 clean:
 	$(RM) *.o bst

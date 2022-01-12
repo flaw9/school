@@ -1,6 +1,6 @@
 #ifndef __ABR_H__
 #define __ABR_H__
-#include "Identite.h"
+#include "identite.h"
 
 typedef struct _Node
 {
@@ -22,7 +22,7 @@ extern const ABR arbre_vide; // = (ABR)NULL
 // @return
 // le Node alloué
 
-extern Node *nodeNew(Identite *id, ABR sag, ABR sag);
+extern Node *nodeNew(Identite *id, ABR sag, ABR sad);
 
 // désallocation d'un Node
 // @param
@@ -77,6 +77,6 @@ extern void abrLNR(ABR a, void (*f)(Identite *));
 // fname: nom du fichier à lire
 // @return
 // un ABR
-extern ABR abrReadFromCsv(char *file);
+extern ABR abrReadFromCSV(char *file);
 
 #endif // __ABR_H__
