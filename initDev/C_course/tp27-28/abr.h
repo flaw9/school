@@ -55,3 +55,14 @@ extern unsigned int abrSize(ABR a);
 // a: l'ABR dont on veut connaître la hauteur
 // @return la hauteur de l'ABR
 extern unsigned int abrHeight(ABR a);
+
+/*
+abrLNR (Left Node Right)
+*/
+
+// parcours en profondeur d'abord, ordre infixe
+// @param
+// a: l'ABR à parcourir
+// f: fonction à appliquer à chaque Node
+// @return None
+extern void abrLNR(ABR a, void (*f)(Identite *));
