@@ -131,10 +131,10 @@ ABR abrReadFromCSV(char *fname){
     file = fopen(fname, "r");
 
     if (file != NULL) {
-        ABR arbre;
+        ABR arbre = arbre_vide;
         char *titres;
-        char *nom;
-        char *prenom;
+        char nom[25];
+        char prenom[25];
         fscanf(file, "%s", titres);
         while (fscanf(file, "%[^;];%[^;]", nom, prenom) != EOF) {
             Identite *id;
