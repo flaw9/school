@@ -123,7 +123,22 @@ void abrLNR(ABR a, void (*f)(Identite *))
 // @param
 // fname: nom du fichier à lire
 // @return
-// un ABR
+// l'ABR ainsi créé
 ABR abrReadFromCSV(char *fname){
-    return arbre_vide;
+    FILE *file;
+    file = fopen(fname, "r");
+
+    if (file != NULL) {
+        ABR arbre = arbre_vide;
+        char *titres;
+        char nom[25];
+        char prenom[25];
+        fscanf(file, "%s", titres);
+        while (fscanf(file, "%[^;];%[^;]", nom, prenom) != EOF) {
+            Identite *id;
+            id = identiteNew(nom, prenom);
+            abrInsert(arbre, id);
+        }
+        return arbre;
+    }
 }
