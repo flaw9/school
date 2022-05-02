@@ -101,3 +101,30 @@ Pour l'adresse réseau, on remplace tous les `H` par `0` `(R.0.0.0)`.
 Pour les IPs assignables, on les situe entre l'adresse réseau et l'adresse broadcast.
 
 ***
+
+## Paquet IP
+
+**Version:** Numéro de la version de l'IP (IPv4 par exemple)
+
+**IHL**: (Internet Header Length): Longueur de l'entête de l'IP.
+
+**Type Of Service:** Ce champ spécifie les services différenciés selon la RFC 2474. Ex: VoIP (Services vocaux interactifs)
+
+**Total length:** Taille totale du paquet, entête et données compris.
+
+**Identification:** Champ permettant d'identifier un groupe de fragments d'un datagramme IP unique.
+
+**Flags:** Champs de trois bits permettant d'identifier. Le premier bit est réservé, il doit être nul. Le deuxième, si définit, indique que le paquet ne doit pas être fragmenté, le dernier bit est renseigné sur tous les fragments si le paquet est fragmenté, sauf le dernier, qui a un `Fragment Offset` non-nul, afin de l'identifier.
+
+**Fragment Offset:** Il indique le décalage du fragment par rapport au début du datagramme IP.
+
+**Time To Live:** Temps de vie du datagramme, pour éviter une défaillancedu réseau en cas de boucle de routage.
+
+**Protocol:** Spécifie le protocole IP utilisé.
+
+**Header Checksum:** Permet de vérifier s'il y a une erreur dans l'en-tête.
+
+**Source IP Adress:** Adresse de l'expéditeur du paquet.
+
+**Destination IP Adress:** Adresse du destinataire du paquet.
+
