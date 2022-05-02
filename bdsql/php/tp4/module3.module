@@ -1,0 +1,29 @@
+<?php
+/**
+* @file
+* Enregistre et affiche la liste des pages visitées précédemment
+*/
+/**
+* Implements hook_init().
+*/
+function module3_init() {
+return;
+}
+/**
+* Implements hook_permission().
+*/
+function module3_permission() {
+return;
+}
+/**
+* Implements hook_menu().
+*/
+function module3_menu() {
+return;
+}
+/**
+* Implements hook_cron().
+*/
+function module3_cron() {
+return;
+}

@@ -1,0 +1,8 @@
+name = module3
+description = Mémorise une liste des pages visitées précédemment.
+package = Cours Drupal DF
+core = 7.x
+configure = admin/config/module3
+files[] = module3.module
+files[] = module3.admin.inc
+dependencies[] = block
