@@ -92,7 +92,7 @@ Adresses IP assignables|**98.0.0.1 &rarr; 98.255.255.254**
 
 <u>**Explications:**</u>
 
-Réseau de type **C** de forme `R.H.H.H`, donc les valeurs qui sont positionnées au niveau des `R` ne bougent pas `(98.H.H.H)`.
+Réseau de type **A** de forme `R.H.H.H`, donc les valeurs qui sont positionnées au niveau des `R` ne bougent pas `(98.H.H.H)`.
 
 Pour l'adresse broadcast, on remplace tous les `H` par `255` `(R.255.255.255)`.
 
