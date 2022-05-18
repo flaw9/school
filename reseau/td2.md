@@ -127,4 +127,3 @@ Pour les IPs assignables, on les situe entre l'adresse réseau et l'adresse broa
 **Source IP Adress:** Adresse de l'expéditeur du paquet.
 
 **Destination IP Adress:** Adresse du destinataire du paquet.
-
